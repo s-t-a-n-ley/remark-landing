@@ -6,7 +6,7 @@
 <title>Remark — Reviews That Actually Matter</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -58,8 +58,7 @@ h1 .ital{font-style:italic;color:var(--orange)}
 .phone-pill{width:60px;height:5px;background:#2e2c27;border-radius:10px}
 .phone-screen{padding:16px}
 .phone-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.phone-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:#f5f0e8;letter-spacing:-0.02em}
-.phone-logo span{color:var(--orange)}
+.phone-logo img{height:18px;display:block}
 .live-pill{background:var(--orange);color:#1a1814;font-size:0.62rem;font-weight:700;font-family:'Geist Mono',monospace;padding:4px 10px;border-radius:100px;letter-spacing:0.05em}
 .p-card{background:#2a2824;border-radius:16px;overflow:hidden;margin-bottom:10px}
 .p-card-img{height:76px;background:linear-gradient(135deg,#3d3729,#2a2420);display:flex;align-items:center;justify-content:center;font-size:2rem;position:relative}
@@ -72,13 +71,12 @@ h1 .ital{font-style:italic;color:var(--orange)}
 .p-revs{margin-top:4px}
 .p-rev{padding:9px 0;border-top:1px solid #2e2c27;display:flex;gap:8px;align-items:flex-start}
 .p-av{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--orange),#a05a00);display:flex;align-items:center;justify-content:center;font-size:0.58rem;font-weight:700;color:#1a1814;flex-shrink:0}
-.p-rev-inner{}
 .p-rev-text{font-size:0.68rem;color:#aaa;line-height:1.5}
 .p-verified{font-size:0.56rem;font-family:'Geist Mono',monospace;color:#4caf72;background:rgba(76,175,114,0.1);border:1px solid rgba(76,175,114,0.2);padding:2px 6px;border-radius:4px;margin-top:3px;display:inline-block}
 
 /* TICKER */
 .ticker{overflow:hidden;padding:13px 0;background:var(--ink)}
-.ticker-track{display:flex;gap:56px;white-space:nowrap;animation:scroll 25s linear infinite}
+.ticker-track{display:flex;gap:56px;white-space:nowrap;animation:scroll 28s linear infinite}
 .tick{display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;color:rgba(245,240,232,0.35);flex-shrink:0}
 .tick b{color:var(--orange)}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -91,6 +89,34 @@ h1 .ital{font-style:italic;color:var(--orange)}
 .s-title .ital{font-style:italic;color:var(--orange)}
 .s-body{font-size:1rem;color:var(--warm-grey);line-height:1.8;max-width:520px}
 
+/* EXPIRY STRIP */
+.expiry-strip{padding:80px 0;border-bottom:1px solid var(--light-border)}
+.expiry-inner{display:flex;align-items:center;gap:80px}
+.expiry-quote{
+  flex:1;
+  font-family:'Instrument Serif',serif;
+  font-size:clamp(1.8rem,3.2vw,3rem);
+  line-height:1.1;letter-spacing:-0.01em;
+  border-left:3px solid var(--orange);padding-left:32px
+}
+.expiry-quote em{font-style:italic;color:var(--orange)}
+.expiry-right{flex:1;max-width:440px}
+.expiry-right p{font-size:0.96rem;color:var(--warm-grey);line-height:1.8;margin-bottom:24px;font-weight:400}
+.compare-block{display:flex;gap:12px;align-items:stretch}
+.cmp-card{flex:1;border-radius:14px;padding:18px 20px}
+.cmp-card.old{background:var(--stone);border:1px solid var(--light-border)}
+.cmp-card.now{background:var(--ink);border:1px solid var(--ink)}
+.cmp-label{font-family:'Geist Mono',monospace;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.cmp-card.old .cmp-label{color:var(--warm-grey)}
+.cmp-card.now .cmp-label{color:rgba(245,240,232,0.35)}
+.cmp-score{font-family:'Instrument Serif',serif;font-size:2.4rem;line-height:1;letter-spacing:-0.01em}
+.cmp-card.old .cmp-score{color:var(--warm-grey)}
+.cmp-card.now .cmp-score{color:var(--orange)}
+.cmp-sub{font-size:0.7rem;margin-top:6px;font-family:'Geist Mono',monospace}
+.cmp-card.old .cmp-sub{color:rgba(26,24,20,0.35);text-decoration:line-through}
+.cmp-card.now .cmp-sub{color:rgba(245,240,232,0.4)}
+.cmp-arrow{display:flex;align-items:center;color:var(--warm-grey);font-size:1.2rem;flex-shrink:0}
+
 /* PROBLEM */
 .problem-section{padding:100px 0;border-bottom:1px solid var(--light-border)}
 .prob-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--light-border);border:1px solid var(--light-border);border-radius:20px;overflow:hidden;margin-top:56px}
@@ -100,19 +126,30 @@ h1 .ital{font-style:italic;color:var(--orange)}
 .prob-card h3{font-family:'Instrument Serif',serif;font-size:1.45rem;line-height:1.2;margin-bottom:12px}
 .prob-card p{font-size:0.88rem;color:var(--warm-grey);line-height:1.75}
 
-/* HOW */
-.how-section{padding:100px 0;background:var(--ink);color:var(--bg)}
-.how-section .s-label{color:rgba(245,240,232,0.35)}
-.how-section .s-label::after{background:var(--orange)}
-.how-section .s-title{color:var(--bg)}
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border:1px solid rgba(255,255,255,0.07);border-radius:20px;overflow:hidden}
-.step-card{padding:40px 32px;border-right:1px solid rgba(255,255,255,0.07);transition:background .3s}
-.step-card:last-child{border-right:none}
-.step-card:hover{background:rgba(245,166,35,0.05)}
-.step-icon{font-size:1.8rem;margin-bottom:20px}
-.step-n{font-family:'Geist Mono',monospace;font-size:0.65rem;color:var(--orange);letter-spacing:0.1em;margin-bottom:12px}
-.step-card h3{font-family:'Instrument Serif',serif;font-size:1.2rem;margin-bottom:10px;color:var(--bg);line-height:1.25}
-.step-card p{font-size:0.83rem;color:rgba(245,240,232,0.45);line-height:1.7}
+/* HINT SECTION */
+.hint-section{padding:100px 0;background:var(--ink);color:var(--bg)}
+.hint-section .s-label{color:rgba(245,240,232,0.3)}
+.hint-section .s-label::after{background:var(--orange)}
+.hint-title{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,4.5vw,4.2rem);line-height:1.05;letter-spacing:-0.01em;color:#f5f0e8;margin-bottom:20px}
+.hint-title em{font-style:italic;color:var(--orange)}
+.hint-body{font-size:0.98rem;color:rgba(245,240,232,0.4);line-height:1.8;max-width:480px;margin-bottom:56px;font-weight:400}
+.hint-pills{display:flex;flex-direction:column;gap:10px;max-width:580px}
+.hint-pill{
+  display:flex;align-items:center;gap:16px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);border-radius:14px;
+  padding:18px 22px;cursor:default;
+  transition:background .25s,border-color .25s
+}
+.hint-pill:hover{background:rgba(245,166,35,0.06);border-color:rgba(245,166,35,0.2)}
+.hint-pill-icon{
+  width:36px;height:36px;border-radius:10px;
+  background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0
+}
+.hint-pill-q{font-family:'Instrument Serif',serif;font-size:1rem;color:#f5f0e8;line-height:1.25;margin-bottom:4px}
+.hint-pill-a{font-size:0.78rem;color:rgba(245,240,232,0.35);line-height:1.5;font-family:'Geist Mono',monospace;letter-spacing:0.01em}
 
 /* FEATURES */
 .features-section{padding:100px 0;border-bottom:1px solid var(--light-border)}
@@ -164,9 +201,9 @@ h1 .ital{font-style:italic;color:var(--orange)}
 .wl-glow{position:absolute;width:700px;height:400px;background:radial-gradient(ellipse,rgba(245,166,35,0.1),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
 .waitlist-section .s-label{color:rgba(245,240,232,0.3);justify-content:center}
 .waitlist-section .s-label::after{display:none}
-.wl-title{font-family:'Instrument Serif',serif;font-size:clamp(3rem,6vw,5.5rem);line-height:1;letter-spacing:-0.03em;margin-bottom:20px}
+.wl-title{font-family:'Instrument Serif',serif;font-size:clamp(3rem,6vw,5.5rem);line-height:1;letter-spacing:-0.02em;margin-bottom:20px}
 .wl-title .ital{font-style:italic;color:var(--orange)}
-.wl-sub{color:rgba(245,240,232,0.45);font-size:1.05rem;line-height:1.75;margin-bottom:48px}
+.wl-sub{color:rgba(245,240,232,0.45);font-size:1.05rem;line-height:1.75;margin-bottom:48px;max-width:380px;margin-left:auto;margin-right:auto}
 .wl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;max-width:460px;margin:0 auto}
 .wl-input{flex:1;min-width:220px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:100px;padding:16px 24px;color:var(--bg);font-size:0.92rem;font-family:'Syne',sans-serif;outline:none;transition:border-color .2s}
 .wl-input::placeholder{color:rgba(245,240,232,0.28)}
@@ -177,7 +214,7 @@ h1 .ital{font-style:italic;color:var(--orange)}
 
 /* FOOTER */
 footer{background:var(--ink);border-top:1px solid rgba(255,255,255,0.06);padding:36px 48px;display:flex;align-items:center;justify-content:space-between}
-footer img{height:20px}
+footer img{height:20px;display:block}
 footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono',monospace}
 
 /* ANIMATIONS */
@@ -195,32 +232,34 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
   .hero-right{padding:40px 24px 60px;min-height:320px}
   .phone{width:200px}
   .wrap{padding:0 24px}
-  .prob-grid,.steps-grid,.stats-inner{grid-template-columns:1fr}
-  .step-card{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .prob-grid,.stats-inner{grid-template-columns:1fr}
   .feat-row,.feat-row.flip{grid-template-columns:1fr;gap:32px;direction:ltr}
+  .expiry-inner{flex-direction:column;gap:40px}
+  .expiry-quote{border-left:none;border-top:3px solid var(--orange);padding-left:0;padding-top:24px}
   footer{flex-direction:column;gap:16px;text-align:center}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="nav-logo"><img src="remark.png" alt="Remark"/></div>
   <div class="nav-right">
-    <a href="#how" class="nav-link">How it works</a>
     <a href="#features" class="nav-link">Features</a>
     <a href="#waitlist" class="nav-btn">Join waitlist</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Launching soon in India</div>
+    <div class="hero-tag">Launching soon in Trivandrum</div>
     <h1>The review<br>you can<br><span class="ital">actually</span> trust</h1>
-    <p class="hero-body">Only visits from the last 30 days count. Every review is GPS-verified, photo-stamped, and written by someone who was actually there.</p>
+    <p class="hero-body">Restaurants change. Scores shouldn't lie about it. Remark shows you where things stand right now — not where they were.</p>
     <div class="hero-actions">
       <a href="#waitlist" class="btn-dark">Join the waitlist →</a>
-      <a href="#how" class="btn-ghost">See how it works ↓</a>
+      <a href="#features" class="btn-ghost">See what's different ↓</a>
     </div>
   </div>
   <div class="hero-right">
@@ -229,28 +268,28 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
       <div class="phone-notch"><div class="phone-pill"></div></div>
       <div class="phone-screen">
         <div class="phone-header">
-          <div class="phone-logo">re<span>mark</span></div>
+          <div class="phone-logo"><img src="remarkwhite.png" alt="Remark"/></div>
           <div class="live-pill">● LIVE</div>
         </div>
         <div class="p-card">
           <div class="p-card-img">🍛<div class="verified-tag"><div class="v-dot"></div>VERIFIED</div></div>
           <div class="p-card-body">
-            <div class="p-name">Anand Bhavan</div>
-            <div class="p-meta"><span class="p-score">8.7</span><span>· 30-day score · 43 reviews</span></div>
+            <div class="p-name">Ariya Nivaas</div>
+            <div class="p-meta"><span class="p-score">8.7</span><span>· 30-day score · 43 visits</span></div>
           </div>
         </div>
         <div class="p-revs">
           <div class="p-rev">
             <div class="p-av">AS</div>
             <div class="p-rev-inner">
-              <div class="p-rev-text">Masala dosa is incredible. Crispy edges, exactly right.</div>
+              <div class="p-rev-text">Sadhya was incredible. Every item fresh and on point.</div>
               <div class="p-verified">✓ GPS VERIFIED · 1H AGO</div>
             </div>
           </div>
           <div class="p-rev">
             <div class="p-av">RK</div>
             <div class="p-rev-inner">
-              <div class="p-rev-text">Service slow today but the sambar is still the best.</div>
+              <div class="p-rev-text">Queue was long but the puttu kadala was worth it.</div>
               <div class="p-verified">✓ GPS VERIFIED · 3H AGO</div>
             </div>
           </div>
@@ -260,28 +299,57 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
   </div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <div class="tick"><b>✓</b> GPS-verified visits</div>
-    <div class="tick"><b>✓</b> 30-day recency window</div>
-    <div class="tick"><b>✓</b> Photo proof required</div>
-    <div class="tick"><b>✓</b> Real-time crowd data</div>
-    <div class="tick"><b>✓</b> Zero fake reviews</div>
-    <div class="tick"><b>✓</b> Earn rewards</div>
-    <div class="tick"><b>✓</b> Human complaint resolution</div>
-    <div class="tick"><b>✓</b> Dish-level scoring</div>
-    <div class="tick"><b>✓</b> GPS-verified visits</div>
-    <div class="tick"><b>✓</b> 30-day recency window</div>
-    <div class="tick"><b>✓</b> Photo proof required</div>
-    <div class="tick"><b>✓</b> Real-time crowd data</div>
-    <div class="tick"><b>✓</b> Zero fake reviews</div>
-    <div class="tick"><b>✓</b> Earn rewards</div>
-    <div class="tick"><b>✓</b> Human complaint resolution</div>
-    <div class="tick"><b>✓</b> Dish-level scoring</div>
+    <div class="tick"><b>✦</b> GPS-verified visits only</div>
+    <div class="tick"><b>✦</b> 30-day rolling scores</div>
+    <div class="tick"><b>✦</b> Photo proof required</div>
+    <div class="tick"><b>✦</b> Real-time crowd signal</div>
+    <div class="tick"><b>✦</b> Zero unverified reviews</div>
+    <div class="tick"><b>✦</b> Earn rewards</div>
+    <div class="tick"><b>✦</b> Human complaint resolution</div>
+    <div class="tick"><b>✦</b> Dish-level scoring</div>
+    <div class="tick"><b>✦</b> GPS-verified visits only</div>
+    <div class="tick"><b>✦</b> 30-day rolling scores</div>
+    <div class="tick"><b>✦</b> Photo proof required</div>
+    <div class="tick"><b>✦</b> Real-time crowd signal</div>
+    <div class="tick"><b>✦</b> Zero unverified reviews</div>
+    <div class="tick"><b>✦</b> Earn rewards</div>
+    <div class="tick"><b>✦</b> Human complaint resolution</div>
+    <div class="tick"><b>✦</b> Dish-level scoring</div>
   </div>
 </div>
 
-<section class="problem-section">
+<!-- EXPIRY STRIP -->
+<section class="expiry-strip">
+  <div class="wrap">
+    <div class="expiry-inner reveal">
+      <div class="expiry-quote">
+        Yesterday's great<br>can be today's <em>meh.</em><br>Scores should<br>know that.
+      </div>
+      <div class="expiry-right">
+        <p>A review doesn't expire on most platforms. A restaurant can slip quietly — new chef, new owner, new attitude — and nobody updates the rating. Remark does it automatically, every single day.</p>
+        <div class="compare-block">
+          <div class="cmp-card old">
+            <div class="cmp-label">Elsewhere · 3 yrs ago</div>
+            <div class="cmp-score">4.5★</div>
+            <div class="cmp-sub">2,847 reviews — oldest from 2021</div>
+          </div>
+          <div class="cmp-arrow">→</div>
+          <div class="cmp-card now">
+            <div class="cmp-label">Remark · right now</div>
+            <div class="cmp-score">6.1</div>
+            <div class="cmp-sub">43 verified visits · last 30 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section" id="features">
   <div class="wrap">
     <div class="s-label reveal">The problem</div>
     <h2 class="s-title reveal">That 4.5★ rating<br>is from <span class="ital">2021</span></h2>
@@ -290,56 +358,63 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
       <div class="prob-card">
         <div class="prob-n">Problem 01</div>
         <h3>Scores that never expire</h3>
-        <p>A restaurant coasts on great reviews from 3 years ago while quality quietly collapses. Remark's 30-day window means scores reflect today, not history.</p>
+        <p>A restaurant coasts on great reviews from 3 years ago while quality quietly collapses. Remark's window means scores reflect today, not history.</p>
       </div>
       <div class="prob-card">
         <div class="prob-n">Problem 02</div>
         <h3>Reviews from people who weren't there</h3>
-        <p>Anyone can review anything on most platforms. Remark requires GPS check-in and a timestamped photo at the time of the meal. No visit, no review.</p>
+        <p>Anyone can review anything on most platforms. Remark requires something that can't be faked: proof you were actually there, at that time, at that table.</p>
       </div>
       <div class="prob-card">
         <div class="prob-n">Problem 03</div>
         <h3>Complaints that vanish into a void</h3>
-        <p>Got food poisoning? Report it somewhere, it disappears. On Remark, every complaint is human-reviewed and the resolution is posted publicly.</p>
+        <p>Report something on other platforms and watch it disappear. On Remark, every complaint is human-reviewed and the resolution is posted publicly.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="how-section" id="how">
+<!-- HINT SECTION -->
+<section class="hint-section">
   <div class="wrap">
-    <div class="s-label reveal">How it works</div>
-    <h2 class="s-title reveal">Four steps to a review<br>no one can fake</h2>
-    <div class="steps-grid reveal">
-      <div class="step-card">
-        <div class="step-icon">📍</div>
-        <div class="step-n">Step 01</div>
-        <h3>Check in at the restaurant</h3>
-        <p>GPS confirms you're physically there. No location, no review. No exceptions.</p>
+    <div class="s-label reveal">Something different</div>
+    <h2 class="hint-title reveal">We built something<br>the industry <em>can't copy</em><br>with a policy update.</h2>
+    <p class="hint-body reveal">We're not going to explain the whole thing here. Some things are better experienced. But here's what you should be asking about any review platform.</p>
+    <div class="hint-pills reveal">
+      <div class="hint-pill">
+        <div class="hint-pill-icon">⏱</div>
+        <div>
+          <div class="hint-pill-q">When was that review actually written?</div>
+          <div class="hint-pill-a">On Remark, recency isn't a filter. It's the foundation.</div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-icon">📸</div>
-        <div class="step-n">Step 02</div>
-        <h3>Photograph your dish</h3>
-        <p>Snap your meal. Photos are timestamped and permanently linked to your visit record.</p>
+      <div class="hint-pill">
+        <div class="hint-pill-icon">📍</div>
+        <div>
+          <div class="hint-pill-q">Was the reviewer actually there?</div>
+          <div class="hint-pill-a">We have a way of knowing. And it can't be spoofed.</div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-icon">✍️</div>
-        <div class="step-n">Step 03</div>
-        <h3>Write your honest take</h3>
-        <p>Rate the dish, the service, the vibe. Goes live immediately and counts toward the 30-day score.</p>
+      <div class="hint-pill">
+        <div class="hint-pill-icon">📣</div>
+        <div>
+          <div class="hint-pill-q">What happened to that complaint you filed?</div>
+          <div class="hint-pill-a">On Remark, it doesn't disappear. It becomes public record.</div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-icon">🎁</div>
-        <div class="step-n">Step 04</div>
-        <h3>Earn points, get free food</h3>
-        <p>Quality reviews earn Remark points. Redeem them for free meals at partner restaurants.</p>
+      <div class="hint-pill">
+        <div class="hint-pill-icon">🍽️</div>
+        <div>
+          <div class="hint-pill-q">Is the restaurant busy right now?</div>
+          <div class="hint-pill-a">We know. In real time. You'll see.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="features-section" id="features">
+<!-- FEATURES -->
+<section class="features-section">
   <div class="wrap">
     <div class="s-label reveal">Features</div>
     <h2 class="s-title reveal">Built so restaurants<br>can't <span class="ital">game</span> the system</h2>
@@ -348,7 +423,7 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
       <div class="feat-text">
         <div class="s-label">Recency score</div>
         <h3 class="s-title" style="font-size:2.4rem">Only the last<br>30 days count</h3>
-        <p class="s-body">Every morning, scores recalculate using only reviews from the past 30 days. No averaging across years. Just an honest reflection of where things stand right now.</p>
+        <p class="s-body">Every morning, scores recalculate using only recent visits. No averaging across years. No inflated legacy ratings. Just an honest read of where things stand right now.</p>
         <div class="chips">
           <div class="chip live">● Updated daily</div>
           <div class="chip">Dish-level scores</div>
@@ -390,7 +465,7 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
       <div class="feat-text">
         <div class="s-label">Real-time crowd</div>
         <h3 class="s-title" style="font-size:2.4rem">Know how busy<br><span class="ital">before</span> you go</h3>
-        <p class="s-body">Live GPS check-ins from diners tell you exactly how packed a restaurant is right now. No more showing up and waiting an hour for a table you didn't expect.</p>
+        <p class="s-body">Live check-ins from real diners tell you exactly how packed a restaurant is right now. No more turning up to a 45-minute wait you didn't expect.</p>
         <div class="chips">
           <div class="chip live">● Live occupancy</div>
           <div class="chip">Peak hours heatmap</div>
@@ -401,17 +476,17 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
         <div style="font-family:'Geist Mono',monospace;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--warm-grey);margin-bottom:18px">Busy right now</div>
         <div class="crowd-row">
           <div class="c-emoji">🔥</div>
-          <div style="flex:1"><div class="c-name">The Curry Leaf</div><div class="c-bar-wrap"><div class="c-bar" style="width:88%;background:var(--red)"></div></div></div>
+          <div style="flex:1"><div class="c-name">Hotel Ariya Nivaas</div><div class="c-bar-wrap"><div class="c-bar" style="width:88%;background:var(--red)"></div></div></div>
           <div class="c-status" style="color:var(--red)">Very busy</div>
         </div>
         <div class="crowd-row">
           <div class="c-emoji">😊</div>
-          <div style="flex:1"><div class="c-name">Spice Garden</div><div class="c-bar-wrap"><div class="c-bar" style="width:50%;background:var(--orange)"></div></div></div>
+          <div style="flex:1"><div class="c-name">Zam Zam Restaurant</div><div class="c-bar-wrap"><div class="c-bar" style="width:50%;background:var(--orange)"></div></div></div>
           <div class="c-status" style="color:var(--orange)">Moderate</div>
         </div>
         <div class="crowd-row">
           <div class="c-emoji">✨</div>
-          <div style="flex:1"><div class="c-name">Biryani House</div><div class="c-bar-wrap"><div class="c-bar" style="width:18%;background:var(--green)"></div></div></div>
+          <div style="flex:1"><div class="c-name">Malabar Junction</div><div class="c-bar-wrap"><div class="c-bar" style="width:18%;background:var(--green)"></div></div></div>
           <div class="c-status" style="color:var(--green)">Quiet</div>
         </div>
       </div>
@@ -419,30 +494,33 @@ footer p{font-size:0.75rem;color:rgba(245,240,232,0.28);font-family:'Geist Mono'
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats-band">
   <div class="wrap">
     <div class="stats-inner reveal">
-      <div class="stat-item"><div class="stat-num">30</div><div class="stat-text">Day recency window.<br>Always current.</div></div>
-      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-text">GPS-verified visits.<br>No fakes, ever.</div></div>
+      <div class="stat-item"><div class="stat-num">30</div><div class="stat-text">Day recency window.<br>Scores that actually expire.</div></div>
+      <div class="stat-item"><div class="stat-num">100%</div><div class="stat-text">GPS-verified visits.<br>No exceptions.</div></div>
       <div class="stat-item"><div class="stat-num">₹0</div><div class="stat-text">To start reviewing<br>and earning rewards.</div></div>
     </div>
   </div>
 </div>
 
+<!-- WAITLIST -->
 <section class="waitlist-section" id="waitlist">
   <div class="wl-glow"></div>
   <div class="wrap" style="position:relative;z-index:1">
     <div class="s-label">Early access</div>
     <h2 class="wl-title">Be first<br>to <span class="ital">remark.</span></h2>
-    <p class="wl-sub">Launching hyperlocally in select neighbourhoods.<br>Join the list and get early access + bonus reward points.</p>
+    <p class="wl-sub">Launching first in Trivandrum. Join the list — early access and bonus reward points when we go live.</p>
     <div class="wl-form">
       <input class="wl-input" type="email" placeholder="your@email.com" id="wl-email"/>
       <button class="wl-btn" onclick="handleWL()">Notify me →</button>
     </div>
-    <div class="wl-note" id="wl-msg">No spam. Just a ping when we launch near you.</div>
+    <div class="wl-note" id="wl-msg">No spam. A single ping when we launch near you.</div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <img src="remarkwhite.png" alt="Remark"/>
   <p>© 2026 Remark · remarks.co.in</p>
