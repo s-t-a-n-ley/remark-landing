@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1200"/>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&display=swap');
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  body{
+    width:1200px;
+    height:630px;
+    overflow:hidden;
+    background:#1a1814;
+    font-family:'DM Sans',sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .canvas{
+    width:1200px;
+    height:630px;
+    position:relative;
+    background:#1a1814;
+    overflow:hidden;
+  }
+
+  /* Radial glow */
+  .glow{
+    position:absolute;
+    width:800px;height:600px;
+    background:radial-gradient(ellipse at center, rgba(245,166,35,0.13) 0%, transparent 65%);
+    top:-80px;left:-100px;
+    pointer-events:none;
+  }
+  .glow2{
+    position:absolute;
+    width:500px;height:500px;
+    background:radial-gradient(ellipse at center, rgba(245,166,35,0.07) 0%, transparent 65%);
+    bottom:-100px;right:0px;
+    pointer-events:none;
+  }
+
+  /* Noise grid lines - decorative */
+  .grid{
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px);
+    background-size:60px 60px;
+    pointer-events:none;
+  }
+
+  /* Main layout */
+  .inner{
+    position:relative;
+    z-index:2;
+    width:1200px;
+    height:630px;
+    display:grid;
+    grid-template-columns:1fr 380px;
+    padding:72px 80px 72px 80px;
+    gap:40px;
+    align-items:center;
+  }
+
+  /* LEFT */
+  .left{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    height:100%;
+  }
+
+  .logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .headline{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:32px 0;
+  }
+
+  .eyebrow{
+    font-size:13px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:0.2em;
+    color:rgba(245,240,232,0.35);
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:20px;height:1px;
+    background:#f5a623;
+    display:block;
+  }
+
+  h1{
+    font-size:64px;
+    font-weight:700;
+    line-height:1.0;
+    letter-spacing:-0.045em;
+    color:#f5f0e8;
+    margin-bottom:20px;
+  }
+
+  h1 em{
+    font-style:italic;
+    color:#f5a623;
+    font-weight:600;
+  }
+
+  .sub{
+    font-size:18px;
+    color:rgba(245,240,232,0.45);
+    font-weight:400;
+    line-height:1.6;
+    max-width:440px;
+  }
+
+  .url{
+    font-size:14px;
+    font-weight:500;
+    color:rgba(245,240,232,0.25);
+    letter-spacing:0.04em;
+  }
+
+  /* RIGHT — mock card */
+  .right{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+  }
+
+  .card{
+    width:320px;
+    background:#232018;
+    border:1px solid rgba(245,166,35,0.12);
+    border-radius:24px;
+    overflow:hidden;
+  }
+
+  .card-top{
+    background:linear-gradient(135deg,#2e2a20,#201e18);
+    height:110px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:2.8rem;
+    position:relative;
+  }
+
+  .vtag{
+    position:absolute;
+    top:12px;right:12px;
+    background:rgba(0,0,0,0.5);
+    border:1px solid rgba(76,175,114,0.3);
+    border-radius:100px;
+    padding:4px 10px;
+    font-size:10px;
+    font-weight:600;
+    color:#4caf72;
+    letter-spacing:0.1em;
+    display:flex;
+    align-items:center;
+    gap:5px;
+  }
+
+  .vdot{
+    width:5px;height:5px;
+    background:#4caf72;
+    border-radius:50%;
+  }
+
+  .card-body{
+    padding:16px 18px;
+  }
+
+  .r-name{
+    font-size:16px;
+    font-weight:600;
+    color:#f5f0e8;
+    letter-spacing:-0.02em;
+    margin-bottom:5px;
+  }
+
+  .r-meta{
+    font-size:11px;
+    color:rgba(245,240,232,0.35);
+    margin-bottom:14px;
+  }
+
+  .r-score{
+    color:#f5a623;
+    font-weight:700;
+    font-size:14px;
+  }
+
+  .rev{
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:10px 0;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+
+  .av{
+    width:28px;height:28px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#f5a623,#a05a00);
+    display:flex;align-items:center;justify-content:center;
+    font-size:9px;font-weight:700;color:#1a1814;
+    flex-shrink:0;
+  }
+
+  .rev-text{
+    font-size:11px;
+    color:rgba(245,240,232,0.5);
+    line-height:1.55;
+  }
+
+  .rev-badge{
+    font-size:9px;
+    font-weight:500;
+    color:#4caf72;
+    background:rgba(76,175,114,0.1);
+    border:1px solid rgba(76,175,114,0.2);
+    border-radius:4px;
+    padding:2px 6px;
+    margin-top:4px;
+    display:inline-block;
+    letter-spacing:0.05em;
+  }
+
+  /* Pills strip */
+  .pills{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    margin-top:6px;
+  }
+
+  .pill{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:8px;
+    padding:7px 12px;
+    font-size:11px;
+    color:rgba(245,240,232,0.45);
+  }
+
+  .pill-icon{
+    width:18px;height:18px;
+    background:rgba(245,166,35,0.1);
+    border-radius:5px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;flex-shrink:0;
+  }
+
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <div class="grid"></div>
+
+  <div class="inner">
+    <!-- LEFT -->
+    <div class="left">
+      <div class="logo-area">
+        <img src="remarkwhite.png" alt="Remark" style="height:28px;display:block;"/>
+      </div>
+
+      <div class="headline">
+        <div class="eyebrow">Launching in Trivandrum</div>
+        <h1>Reviews you can<br><em>actually</em> trust.</h1>
+        <p class="sub">GPS-verified visits. 30-day rolling scores.<br>Zero fake reviews.</p>
+      </div>
+
+      <div class="url">remarks.co.in</div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+      <div class="card">
+        <div class="card-top">
+          🍛
+          <div class="vtag"><div class="vdot"></div>VERIFIED</div>
+        </div>
+        <div class="card-body">
+          <div class="r-name">Ariya Nivaas</div>
+          <div class="r-meta"><span class="r-score">8.7</span> · 30-day score · 43 visits</div>
+          <div class="rev">
+            <div class="av">AS</div>
+            <div>
+              <div class="rev-text">Sadhya was incredible. Every item fresh and on point.</div>
+              <div class="rev-badge">✓ GPS VERIFIED · 1H AGO</div>
+            </div>
+          </div>
+          <div class="rev">
+            <div class="av">RK</div>
+            <div>
+              <div class="rev-text">Queue was long but the puttu kadala was worth it.</div>
+              <div class="rev-badge">✓ GPS VERIFIED · 3H AGO</div>
+            </div>
+          </div>
+
+          <div class="pills">
+            <div class="pill"><div class="pill-icon">📍</div>GPS-verified visits only</div>
+            <div class="pill"><div class="pill-icon">⏱</div>30-day rolling scores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
