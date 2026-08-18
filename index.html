@@ -788,7 +788,20 @@ async function handleWL() {
 
     spinner.style.display = 'none';
     btnText.style.display = 'block';
-    btn.textContent = 'You\'re on the list';
+
+    if (data.duplicate) {
+      // Already on the list. Not a terminal state — they may have mistyped the
+      // address or want to use another one, so leave the form usable and keep
+      // what they typed. (Never assign to btn.textContent: it would delete the
+      // #wl-btn-text and #wl-spinner children this handler depends on.)
+      btn.disabled    = false;
+      msg.style.color = 'rgba(244,244,245,0.62)';
+      msg.textContent = 'You\'re already on the list — we\'ll reach out soon.';
+      return;
+    }
+
+    // Genuine new signup — this one is done, so lock it.
+    btnText.textContent = 'You\'re on the list';
     btn.style.background = '#4CAF7D';
     btn.style.color = '#0A0A0A';
     nameInput.value    = '';
@@ -796,9 +809,7 @@ async function handleWL() {
     nameInput.disabled = true;
     emailInput.disabled = true;
     msg.style.color    = 'rgba(76,175,125,0.9)';
-    msg.textContent    = data.duplicate
-      ? 'You\'re already on the list — we\'ll reach out soon.'
-      : `Done, ${name}! Check your promotions/inbox for a confirmation.`;
+    msg.textContent    = `Done, ${name}! Check your promotions/inbox for a confirmation.`;
 
   } catch (err) {
     spinner.style.display = 'none';
