@@ -4,22 +4,23 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Privacy Policy — Remark</title>
-<meta name="description" content="How Remark collects, uses, and protects your personal data. No analytics, no ad networks, no background location — and your GPS coordinates are never shown to anyone."/>
+<title>Privacy Policy — remark</title>
+<meta name="description" content="How remark collects, uses, and protects your personal data. No analytics, no ad networks, no background location — and your GPS coordinates are never shown to anyone."/>
 <meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#050505"/>
 <link rel="canonical" href="https://remarks.co.in/privacy"/>
 
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://remarks.co.in/privacy"/>
-<meta property="og:site_name" content="Remark"/>
-<meta property="og:title" content="Privacy Policy — Remark"/>
-<meta property="og:description" content="What Remark collects, why, who it is shared with, and what control you have."/>
+<meta property="og:site_name" content="remark"/>
+<meta property="og:title" content="Privacy Policy — remark"/>
+<meta property="og:description" content="What remark collects, why, who it is shared with, and what control you have."/>
 <meta property="og:image" content="https://remarks.co.in/og-image.png"/>
 <meta property="og:locale" content="en_IN"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Privacy Policy — Remark"/>
-<meta name="twitter:description" content="What Remark collects, why, who it is shared with, and what control you have."/>
+<meta name="twitter:title" content="Privacy Policy — remark"/>
+<meta name="twitter:description" content="What remark collects, why, who it is shared with, and what control you have."/>
 <meta name="twitter:image" content="https://remarks.co.in/og-image.png"/>
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -30,25 +31,28 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
 <style>
-  /* Palette mirrors the remarks.co.in landing page. --accent is a darkened
-     amber so links stay readable on cream; --accent-bright is the landing
-     orange, used only for decorative rules and hovers. */
+  /* Obsidian Glass — same tokens as the landing page and the app.
+     --ink is the TEXT colour here, not a background; --bg0/--bg1 are the
+     surfaces. Saffron is rationed to numerals, links and rules. */
   :root {
-    --bg: #f7f4ef;
-    --surface: #ffffff;
-    --surface-2: #f1ece4;
-    --edge: #ddd8ce;
-    --ink: #1a1814;
-    --ink-mid: #6b6459;
-    --ink-low: #9c9589;
-    --accent: #b8790f;
-    --accent-bright: #f5a623;
-    --good: #2d6a4f;
+    --bg: #050505;
+    --bg1: #0c0d0f;
+    --surface: rgba(255,255,255,0.02);
+    --surface-2: rgba(255,255,255,0.05);
+    --fill2: rgba(255,255,255,0.07);
+    --edge: rgba(255,255,255,0.12);
+    --edge-lit: rgba(255,255,255,0.22);
+    --ink: #f4f4f5;
+    --ink-mid: rgba(244,244,245,0.62);
+    --ink-low: rgba(244,244,245,0.38);
+    --accent: #F5A623;
+    --accent-bright: #F5A623;
+    --good: #4CAF7D;
     --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --mono: 'Space Mono', ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -67,19 +71,21 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 48px;
-    background: rgba(247, 244, 239, 0.9);
+    background: rgba(5, 5, 5, 0.72);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--edge);
   }
   .nav-logo img { height: 24px; display: block; }
   .nav-btn {
-    background: var(--ink); color: var(--bg);
-    padding: 10px 22px; border-radius: 100px;
-    font-size: 0.85rem; font-weight: 600; letter-spacing: -0.01em;
-    text-decoration: none; transition: all .2s;
+    background: var(--fill2); color: var(--ink);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.25);
+    padding: 9px 20px; border-radius: 100px;
+    font-size: 0.84rem; font-weight: 700; letter-spacing: -0.01em;
+    text-decoration: none; transition: background .2s, border-color .2s;
   }
-  .nav-btn:hover { background: var(--accent-bright); color: var(--ink); }
+  .nav-btn:hover { background: rgba(255,255,255,0.11); border-color: var(--edge-lit); }
 
   .wrap { max-width: 760px; margin: 0 auto; padding: 124px 24px 96px; }
 
@@ -94,10 +100,11 @@
     margin-bottom: 18px;
   }
   .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent-bright); display: block; }
-  h1 { font-size: clamp(28px, 5vw, 38px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.02em; font-weight: 700; }
+  h1 { font-size: clamp(30px, 5.4vw, 42px); line-height: 1.14; margin: 0 0 12px; letter-spacing: -0.035em; font-weight: 800; }
   .dates { font-size: 13.5px; color: var(--ink-mid); margin: 0; }
 
   h2 {
+    font-weight: 800;
     font-size: 20px;
     margin: 44px 0 14px;
     letter-spacing: -0.01em;
@@ -131,7 +138,7 @@
     font-size: 14.5px;
   }
   .callout p:last-child { margin-bottom: 0; }
-  .callout.warn { border-color: rgba(212, 137, 26, 0.45); background: #fbf3e6; }
+  .callout.warn { border-color: rgba(245, 166, 35, 0.34); background: rgba(245, 166, 35, 0.06); }
 
   .table-scroll { overflow-x: auto; margin: 18px 0; }
   table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 460px; }
@@ -154,30 +161,33 @@
 
   /* FOOTER — mirrors the landing page */
   .site-footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg1);
+    border-top: 1px solid var(--edge);
     padding: 36px 48px;
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 16px;
   }
   .site-footer img { height: 20px; display: block; }
   .site-footer p { font-size: 0.8rem; color: rgba(245, 240, 232, 0.32); font-weight: 400; }
-  .footer-links { display: flex; gap: 18px; font-size: 0.8rem; }
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .footer-links { display: flex; gap: 7px; font-size: 0.8rem; align-items: center; }
   .footer-links a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--accent-bright); }
   .footer-links a[aria-current="page"] { color: rgba(245, 240, 232, 0.28); pointer-events: none; }
+  .footer-links .sep { color: rgba(245, 240, 232, 0.26); }
 
   @media (max-width: 900px) {
     .site-nav { padding: 16px 20px; }
     .wrap { padding: 104px 20px 72px; }
     .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    .footer-right { align-items: center; }
   }
 </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <a class="nav-logo" href="/" aria-label="Remark home"><img src="/remark.png" alt="Remark"/></a>
+  <a class="nav-logo" href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
   <a href="/#waitlist" class="nav-btn">Join waitlist</a>
 </nav>
 
@@ -190,14 +200,14 @@
 </header>
 
 <div class="lede">
-  <p><strong>The short version.</strong> Remark verifies that reviews come from people who actually visited a restaurant. To do that we need your location at the moment you check in — and that is the most sensitive thing we collect. We never show your coordinates to restaurants or to other users.</p>
+  <p><strong>The short version.</strong> remark verifies that reviews come from people who actually visited a restaurant. To do that we need your location at the moment you check in — and that is the most sensitive thing we collect. We never show your coordinates to restaurants or to other users.</p>
   <p>We do not run analytics, advertising, or tracking software of any kind. We have never sold personal data and never will. You can delete your account and everything in it from inside the app at any time.</p>
 </div>
 
-<p>This policy explains what Remark collects, why, who it is shared with, and what control you have. It covers all three parts of Remark: the <strong>Remark mobile app</strong> for diners, the <strong>restaurant dashboard</strong> at restaurant.remarks.co.in, and our internal admin tools.</p>
+<p>This policy explains what remark collects, why, who it is shared with, and what control you have. It covers all three parts of remark: the <strong>remark mobile app</strong> for diners, the <strong>restaurant dashboard</strong> at restaurant.remarks.co.in, and our internal admin tools.</p>
 
 <h2><span class="num">1</span>Who we are</h2>
-<p>Remark is operated by <strong>Stanley Saji</strong>, a sole proprietor based in Kerala, India. For the purposes of India's Digital Personal Data Protection Act, 2023 (the "DPDP Act"), we are the Data Fiduciary for the personal data described here, and you are the Data Principal.</p>
+<p>remark is operated as a sole proprietorship based in Kerala, India. For the purposes of India's Digital Personal Data Protection Act, 2023 (the "DPDP Act"), we are the Data Fiduciary for the personal data described here, and you are the Data Principal.</p>
 <p>You can reach us any time at <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>.</p>
 
 <h2><span class="num">2</span>What we collect</h2>
@@ -206,13 +216,13 @@
 <p>Your email address, a securely hashed password, your username, display name, and optionally an avatar photo and a short bio. Restaurant owners also provide their full name and phone number.</p>
 
 <h3>Location — the most important section</h3>
-<p>Remark records your device's GPS coordinates at three specific moments, and only these three:</p>
+<p>remark records your device's GPS coordinates at three specific moments, and only these three:</p>
 <ul>
   <li>When you <strong>check in</strong> at a restaurant, to confirm you are within 100 metres of it.</li>
   <li>When you <strong>submit a dine-in review</strong>, carried over from that check-in.</li>
   <li>When you <strong>like a review</strong>, because likes require you to be at the restaurant.</li>
 </ul>
-<p>We collect location <strong>only while the app is open and in the foreground</strong>. Remark does not use background location, does not track your movements between visits, and does not build a location history beyond those individual verification events. We do not request the "Always allow" location permission.</p>
+<p>We collect location <strong>only while the app is open and in the foreground</strong>. remark does not use background location, does not track your movements between visits, and does not build a location history beyond those individual verification events. We do not request the "Always allow" location permission.</p>
 <div class="callout">
   <p><strong>Your coordinates are private.</strong> They are never shown to restaurants, never shown to other users, and never displayed anywhere in the app. A restaurant only learns that a verified visit happened — never where you were standing, and never anything about where you go otherwise.</p>
 </div>
@@ -237,7 +247,7 @@
 <p>On the web dashboards, we set <strong>strictly necessary session cookies</strong> to keep you signed in. There are no advertising or analytics cookies. On mobile, your session is stored securely on your device (iOS Keychain / Android Keystore) and no cookies are used.</p>
 
 <h2><span class="num">3</span>What we deliberately do <em>not</em> collect</h2>
-<p>We think this matters as much as what we do collect. Remark contains:</p>
+<p>We think this matters as much as what we do collect. remark contains:</p>
 <ul>
   <li><strong>No analytics software.</strong> No Google Analytics, PostHog, Mixpanel, Firebase, or equivalent.</li>
   <li><strong>No advertising networks or third-party trackers</strong> of any kind.</li>
@@ -251,7 +261,7 @@
 
 <h2><span class="num">4</span>Why we use your data</h2>
 <ul>
-  <li><strong>Verification</strong> — confirming a review comes from a real visit. This is the core of Remark.</li>
+  <li><strong>Verification</strong> — confirming a review comes from a real visit. This is the core of remark.</li>
   <li><strong>Scoring</strong> — calculating each restaurant's rolling 30-day score.</li>
   <li><strong>Fraud prevention</strong> — detecting fake reviews, duplicate orders, and coordinated review attacks.</li>
   <li><strong>Rewards</strong> — awarding points and issuing redemption codes.</li>
@@ -261,7 +271,7 @@
 <p>We process this data on the basis of the consent you give when you create an account and when you grant location permission, as required by the DPDP Act. You can withdraw consent at any time by deleting your account.</p>
 
 <h2><span class="num">5</span>What is public and what is private</h2>
-<p>Remark is a public review platform, so some information is visible to everyone. This table is the complete picture.</p>
+<p>remark is a public review platform, so some information is visible to everyone. This table is the complete picture.</p>
 <div class="table-scroll">
 <table>
   <tr><th>Data</th><th>Visibility</th></tr>
@@ -281,14 +291,14 @@
 <p>When you redeem a reward, the restaurant validating your code sees your username, display name, and avatar so they can confirm it is you. They see nothing else.</p>
 
 <h2><span class="num">6</span>Who we share data with</h2>
-<p>We share personal data with exactly three service providers, each of which processes it only to run Remark:</p>
+<p>We share personal data with exactly three service providers, each of which processes it only to run remark:</p>
 <ul>
   <li><strong>Supabase</strong> — our database, authentication, and file storage provider. All account data, reviews, and uploads are stored on Supabase infrastructure.</li>
   <li><strong>Google Maps Platform</strong> — provides maps and place search. Map usage sends the map view and search queries to Google. Your stored check-in coordinates are not sent to Google.</li>
   <li><strong>Resend</strong> — delivers our transactional emails. Resend receives your email address and the contents of that email.</li>
 </ul>
 <p>We may also disclose data where legally required, for example in response to a valid order from an Indian court or law-enforcement authority.</p>
-<p><strong>We do not sell personal data, and we do not share it with advertisers or data brokers.</strong> There is no third-party advertising on Remark.</p>
+<p><strong>We do not sell personal data, and we do not share it with advertisers or data brokers.</strong> There is no third-party advertising on remark.</p>
 <p>Some of these providers process and store data on servers outside India. The DPDP Act permits such transfers except to countries specifically restricted by the Government of India.</p>
 
 <h2><span class="num">7</span>How long we keep data, and how to delete it</h2>
@@ -321,7 +331,7 @@
 <h2><span class="num">9</span>Grievance Officer</h2>
 <p>In line with the DPDP Act and the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021, the following person handles privacy grievances:</p>
 <div class="contact-box">
-  <p><strong>Stanley Saji</strong> — Grievance Officer, Remark</p>
+  <p><strong>Grievance Officer</strong> — remark</p>
   <p>Email: <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
   <p>Kerala, India</p>
   <p style="color: var(--ink-mid); margin-top: 12px;">We acknowledge grievances within 48 hours and resolve them within 30 days.</p>
@@ -339,7 +349,7 @@
 <p>No system is perfectly secure. If a data breach occurs that is likely to affect you, we will notify you and the Data Protection Board of India as required by law.</p>
 
 <h2><span class="num">11</span>Children</h2>
-<p>Remark is for adults. <strong>You must be 18 or older to create an account.</strong> We do not knowingly collect personal data from anyone under 18. If we learn that we have, we will delete the account and its data promptly. If you believe a minor is using Remark, please tell us at <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>.</p>
+<p>remark is for adults. <strong>You must be 18 or older to create an account.</strong> We do not knowingly collect personal data from anyone under 18. If we learn that we have, we will delete the account and its data promptly. If you believe a minor is using remark, please tell us at <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>.</p>
 
 <h2><span class="num">12</span>Changes to this policy</h2>
 <p>If we change this policy in a way that materially affects you, we will notify you in the app or by email before the change takes effect. The "last updated" date at the top always reflects the current version.</p>
@@ -347,21 +357,24 @@
 <h2><span class="num">13</span>Contact</h2>
 <p>Questions about this policy, or about your data:</p>
 <div class="contact-box">
-  <p><strong>Remark</strong></p>
+  <p><strong>remark</strong></p>
   <p>Email: <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
-  <p>Operated by Stanley Saji, Kerala, India</p>
+  <p>Operated from Kerala, India</p>
 </div>
 
 </div>
 
 <footer class="site-footer">
-  <a href="/" aria-label="Remark home"><img src="/remarkwhite.png" alt="Remark"/></a>
-  <div class="footer-links">
-    <a href="/privacy" aria-current="page">Privacy</a>
-    <a href="/terms">Terms</a>
-    <a href="mailto:hello@remarks.co.in">Contact</a>
+  <a href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <p>© 2026 remark · remarks.co.in</p>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <span class="sep">&amp;</span>
+      <a href="/privacy" aria-current="page">Privacy</a>
+    </div>
+    <p>Built for honest appetites.</p>
   </div>
-  <p>© 2026 Remark · remarks.co.in</p>
 </footer>
 
 </body>

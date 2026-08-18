@@ -4,22 +4,23 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Terms of Service — Remark</title>
-<meta name="description" content="The rules for using Remark: honest reviews from real visits, what you can and cannot post, how points and rewards work, and the terms for restaurants."/>
+<title>Terms of Service — remark</title>
+<meta name="description" content="The rules for using remark: honest reviews from real visits, what you can and cannot post, how points and rewards work, and the terms for restaurants."/>
 <meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#050505"/>
 <link rel="canonical" href="https://remarks.co.in/terms"/>
 
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://remarks.co.in/terms"/>
-<meta property="og:site_name" content="Remark"/>
-<meta property="og:title" content="Terms of Service — Remark"/>
-<meta property="og:description" content="Review honestly, review only places you actually went, and don't abuse anyone. The full agreement between you and Remark."/>
+<meta property="og:site_name" content="remark"/>
+<meta property="og:title" content="Terms of Service — remark"/>
+<meta property="og:description" content="Review honestly, review only places you actually went, and don't abuse anyone. The full agreement between you and remark."/>
 <meta property="og:image" content="https://remarks.co.in/og-image.png"/>
 <meta property="og:locale" content="en_IN"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Terms of Service — Remark"/>
-<meta name="twitter:description" content="Review honestly, review only places you actually went, and don't abuse anyone. The full agreement between you and Remark."/>
+<meta name="twitter:title" content="Terms of Service — remark"/>
+<meta name="twitter:description" content="Review honestly, review only places you actually went, and don't abuse anyone. The full agreement between you and remark."/>
 <meta name="twitter:image" content="https://remarks.co.in/og-image.png"/>
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -30,25 +31,28 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 
 <style>
-  /* Palette mirrors the remarks.co.in landing page. --accent is a darkened
-     amber so links stay readable on cream; --accent-bright is the landing
-     orange, used only for decorative rules and hovers. */
+  /* Obsidian Glass — same tokens as the landing page and the app.
+     --ink is the TEXT colour here, not a background; --bg0/--bg1 are the
+     surfaces. Saffron is rationed to numerals, links and rules. */
   :root {
-    --bg: #f7f4ef;
-    --surface: #ffffff;
-    --surface-2: #f1ece4;
-    --edge: #ddd8ce;
-    --ink: #1a1814;
-    --ink-mid: #6b6459;
-    --ink-low: #9c9589;
-    --accent: #b8790f;
-    --accent-bright: #f5a623;
-    --good: #2d6a4f;
+    --bg: #050505;
+    --bg1: #0c0d0f;
+    --surface: rgba(255,255,255,0.02);
+    --surface-2: rgba(255,255,255,0.05);
+    --fill2: rgba(255,255,255,0.07);
+    --edge: rgba(255,255,255,0.12);
+    --edge-lit: rgba(255,255,255,0.22);
+    --ink: #f4f4f5;
+    --ink-mid: rgba(244,244,245,0.62);
+    --ink-low: rgba(244,244,245,0.38);
+    --accent: #F5A623;
+    --accent-bright: #F5A623;
+    --good: #4CAF7D;
     --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --mono: 'Space Mono', ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -67,19 +71,21 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 18px 48px;
-    background: rgba(247, 244, 239, 0.9);
+    background: rgba(5, 5, 5, 0.72);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--edge);
   }
   .nav-logo img { height: 24px; display: block; }
   .nav-btn {
-    background: var(--ink); color: var(--bg);
-    padding: 10px 22px; border-radius: 100px;
-    font-size: 0.85rem; font-weight: 600; letter-spacing: -0.01em;
-    text-decoration: none; transition: all .2s;
+    background: var(--fill2); color: var(--ink);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.25);
+    padding: 9px 20px; border-radius: 100px;
+    font-size: 0.84rem; font-weight: 700; letter-spacing: -0.01em;
+    text-decoration: none; transition: background .2s, border-color .2s;
   }
-  .nav-btn:hover { background: var(--accent-bright); color: var(--ink); }
+  .nav-btn:hover { background: rgba(255,255,255,0.11); border-color: var(--edge-lit); }
 
   .wrap { max-width: 760px; margin: 0 auto; padding: 124px 24px 96px; }
 
@@ -94,10 +100,11 @@
     margin-bottom: 18px;
   }
   .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent-bright); display: block; }
-  h1 { font-size: clamp(28px, 5vw, 38px); line-height: 1.2; margin: 0 0 12px; letter-spacing: -0.02em; font-weight: 700; }
+  h1 { font-size: clamp(30px, 5.4vw, 42px); line-height: 1.14; margin: 0 0 12px; letter-spacing: -0.035em; font-weight: 800; }
   .dates { font-size: 13.5px; color: var(--ink-mid); margin: 0; }
 
   h2 {
+    font-weight: 800;
     font-size: 20px;
     margin: 44px 0 14px;
     letter-spacing: -0.01em;
@@ -131,7 +138,7 @@
     font-size: 14.5px;
   }
   .callout p:last-child { margin-bottom: 0; }
-  .callout.warn { border-color: rgba(212, 137, 26, 0.45); background: #fbf3e6; }
+  .callout.warn { border-color: rgba(245, 166, 35, 0.34); background: rgba(245, 166, 35, 0.06); }
 
   .table-scroll { overflow-x: auto; margin: 18px 0; }
   table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 460px; }
@@ -154,30 +161,33 @@
 
   /* FOOTER — mirrors the landing page */
   .site-footer {
-    background: var(--ink);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg1);
+    border-top: 1px solid var(--edge);
     padding: 36px 48px;
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 16px;
   }
   .site-footer img { height: 20px; display: block; }
   .site-footer p { font-size: 0.8rem; color: rgba(245, 240, 232, 0.32); font-weight: 400; }
-  .footer-links { display: flex; gap: 18px; font-size: 0.8rem; }
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .footer-links { display: flex; gap: 7px; font-size: 0.8rem; align-items: center; }
   .footer-links a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--accent-bright); }
   .footer-links a[aria-current="page"] { color: rgba(245, 240, 232, 0.28); pointer-events: none; }
+  .footer-links .sep { color: rgba(245, 240, 232, 0.26); }
 
   @media (max-width: 900px) {
     .site-nav { padding: 16px 20px; }
     .wrap { padding: 104px 20px 72px; }
     .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    .footer-right { align-items: center; }
   }
 </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <a class="nav-logo" href="/" aria-label="Remark home"><img src="/remark.png" alt="Remark"/></a>
+  <a class="nav-logo" href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
   <a href="/#waitlist" class="nav-btn">Join waitlist</a>
 </nav>
 
@@ -193,18 +203,18 @@
   <p><strong>The short version.</strong> Review honestly, review only places you actually went, and don't abuse anyone. Your reviews stay yours. Points are a thank-you, not money. Restaurants get a fair score and a fair process to dispute attacks. Break the rules and we'll remove content or close the account.</p>
 </div>
 
-<p>These Terms are an agreement between you and <strong>Remark</strong>, operated by Stanley Saji, a sole proprietor based in Kerala, India ("Remark", "we", "us"). They apply to the Remark mobile app, the restaurant dashboard, and remarks.co.in. By creating an account or using Remark, you accept these Terms. If you do not agree with them, please don't use Remark.</p>
+<p>These Terms are an agreement between you and <strong>remark</strong>, operated as a sole proprietorship based in Kerala, India ("remark", "we", "us"). They apply to the remark mobile app, the restaurant dashboard, and remarks.co.in. By creating an account or using remark, you accept these Terms. If you do not agree with them, please don't use remark.</p>
 
-<h2><span class="num">1</span>Who can use Remark</h2>
+<h2><span class="num">1</span>Who can use remark</h2>
 <p><strong>You must be 18 years or older.</strong> By creating an account you confirm that you are. If you are registering on behalf of a restaurant, you also confirm you are authorised to represent that business.</p>
-<p>Remark currently operates only in cities we have launched in. Outside those areas you can browse, but you cannot check in or post reviews.</p>
+<p>remark currently operates only in cities we have launched in. Outside those areas you can browse, but you cannot check in or post reviews.</p>
 
 <h2><span class="num">2</span>Your account</h2>
 <p>Keep your password private, and let us know promptly if you think someone else has access to your account. You are responsible for activity under your account. One person, one account — creating multiple accounts to post more reviews, farm points, or evade a ban is a serious violation and will result in permanent removal.</p>
 <p>You can delete your account at any time from Profile → Delete account. This is permanent and cannot be undone.</p>
 
 <h2><span class="num">3</span>How verification works</h2>
-<p>Remark exists because ordinary review sites can't tell who actually showed up. Our rules:</p>
+<p>remark exists because ordinary review sites can't tell who actually showed up. Our rules:</p>
 <div class="table-scroll">
 <table class="compact">
   <tr><th>Rule</th><th>What it means</th></tr>
@@ -229,10 +239,10 @@
   <li><strong>Content you don't have the rights to</strong> — including photos taken by someone else.</li>
   <li><strong>Spam, advertising, or links to unrelated services.</strong></li>
 </ul>
-<p>You also may not scrape, copy, or bulk-extract data from Remark, attempt to breach our security, or interfere with the service.</p>
+<p>You also may not scrape, copy, or bulk-extract data from remark, attempt to breach our security, or interfere with the service.</p>
 
 <h2><span class="num">5</span>Your content stays yours</h2>
-<p>You keep ownership of everything you post. By posting, you grant us a non-exclusive, worldwide, royalty-free licence to host, display, and distribute that content as part of operating and promoting Remark. This licence ends when you delete the content or your account, except where we're legally required to retain something.</p>
+<p>You keep ownership of everything you post. By posting, you grant us a non-exclusive, worldwide, royalty-free licence to host, display, and distribute that content as part of operating and promoting remark. This licence ends when you delete the content or your account, except where we're legally required to retain something.</p>
 <p>You can edit a review within 15 minutes of posting. After that the text is fixed, so that restaurants can rely on what they read.</p>
 <p>Remember that reviews, photos and your profile are <strong>public</strong>. Don't post anything you wouldn't want publicly associated with you.</p>
 
@@ -250,7 +260,7 @@
 </ul>
 
 <h2><span class="num">7</span>Terms for restaurants</h2>
-<p>If you register a restaurant on Remark:</p>
+<p>If you register a restaurant on remark:</p>
 <ul>
   <li>You confirm you are authorised to represent the business and that your details, including your FSSAI licence, are accurate and current.</li>
   <li>Listings are reviewed before going live. We may decline or remove a listing at our discretion.</li>
@@ -261,7 +271,7 @@
 </ul>
 
 <h3>Paid plans</h3>
-<p>Remark offers a free listing plus paid plans — Starter at ₹999 per month and Pro at ₹2,999 per month — with analytics, review responses, and advertising features. Video advertising additionally requires a current score of at least 7.0 and a minimum number of recent verified reviews, because we won't promote a restaurant our own data says is underperforming.</p>
+<p>remark offers a free listing plus paid plans — Starter at ₹999 per month and Pro at ₹2,999 per month — with analytics, review responses, and advertising features. Video advertising additionally requires a current score of at least 7.0 and a minimum number of recent verified reviews, because we won't promote a restaurant our own data says is underperforming.</p>
 <div class="callout">
   <p><strong>Billing is currently manual.</strong> We have not yet integrated a payment processor. Plans are arranged and activated directly with us, and prices may change with notice before your next billing period. When automated billing is introduced, these Terms will be updated first.</p>
 </div>
@@ -272,46 +282,49 @@
 
 <h2><span class="num">9</span>Important disclaimers</h2>
 <p><strong>Reviews are the opinions of the people who wrote them, not ours.</strong> We verify that a reviewer was physically present; we do not verify that what they say is accurate or fair.</p>
-<p><strong>We are not a party to your dealings with restaurants.</strong> Remark is not a food-delivery service, does not prepare or sell food, and does not handle payments between you and a restaurant. Any dispute about a meal, a bill, service, or a reward is between you and that business.</p>
+<p><strong>We are not a party to your dealings with restaurants.</strong> remark is not a food-delivery service, does not prepare or sell food, and does not handle payments between you and a restaurant. Any dispute about a meal, a bill, service, or a reward is between you and that business.</p>
 <p><strong>We do not inspect kitchens.</strong> We do not verify hygiene, food safety, allergen information, or any licence beyond checking that an FSSAI number was provided. Always check directly with a restaurant about allergies or dietary requirements.</p>
-<p>Remark is provided "as is". We don't guarantee it will be uninterrupted, error-free, or that scores and information will always be accurate or current.</p>
+<p>remark is provided "as is". We don't guarantee it will be uninterrupted, error-free, or that scores and information will always be accurate or current.</p>
 
 <h2><span class="num">10</span>Limitation of liability</h2>
-<p>To the fullest extent permitted by law, Remark will not be liable for indirect, incidental, special, or consequential damages, or for lost profits, lost business, or loss of data, arising from your use of the service.</p>
+<p>To the fullest extent permitted by law, remark will not be liable for indirect, incidental, special, or consequential damages, or for lost profits, lost business, or loss of data, arising from your use of the service.</p>
 <p>Where liability cannot be excluded, our total liability to you for any claim is limited to the greater of the amount you paid us in the 12 months before the claim, or ₹5,000.</p>
 <p>Nothing in these Terms limits liability for fraud, or for anything that cannot legally be limited under Indian law.</p>
 
 <h2><span class="num">11</span>Indemnity</h2>
-<p>You agree to indemnify Remark against claims, damages, and reasonable costs arising from content you post, your use of the service, or your breach of these Terms.</p>
+<p>You agree to indemnify remark against claims, damages, and reasonable costs arising from content you post, your use of the service, or your breach of these Terms.</p>
 
 <h2><span class="num">12</span>Termination</h2>
-<p>You may stop using Remark and delete your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if we discontinue the service. Sections that by their nature should survive termination — content licences already granted, disclaimers, limitation of liability, and indemnity — will do so.</p>
+<p>You may stop using remark and delete your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if we discontinue the service. Sections that by their nature should survive termination — content licences already granted, disclaimers, limitation of liability, and indemnity — will do so.</p>
 
 <h2><span class="num">13</span>Governing law</h2>
 <p>These Terms are governed by the laws of India. Any dispute will be subject to the exclusive jurisdiction of the courts of <strong>Thiruvananthapuram, Kerala</strong>.</p>
 <p>Before starting formal proceedings, please contact us — nearly everything can be resolved by email.</p>
 
 <h2><span class="num">14</span>Changes to these Terms</h2>
-<p>We may update these Terms as Remark develops. For material changes we will give notice in the app or by email before they take effect. Continuing to use Remark after that means you accept the updated Terms.</p>
+<p>We may update these Terms as remark develops. For material changes we will give notice in the app or by email before they take effect. Continuing to use remark after that means you accept the updated Terms.</p>
 
 <h2><span class="num">15</span>Contact</h2>
 <div class="contact-box">
-  <p><strong>Remark</strong></p>
+  <p><strong>remark</strong></p>
   <p>Email: <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
-  <p>Operated by Stanley Saji, Kerala, India</p>
+  <p>Operated from Kerala, India</p>
   <p style="color: var(--ink-mid); margin-top: 12px;">See also our <a href="/privacy">Privacy Policy</a>.</p>
 </div>
 
 </div>
 
 <footer class="site-footer">
-  <a href="/" aria-label="Remark home"><img src="/remarkwhite.png" alt="Remark"/></a>
-  <div class="footer-links">
-    <a href="/privacy">Privacy</a>
-    <a href="/terms" aria-current="page">Terms</a>
-    <a href="mailto:hello@remarks.co.in">Contact</a>
+  <a href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <p>© 2026 remark · remarks.co.in</p>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/terms" aria-current="page">Terms</a>
+      <span class="sep">&amp;</span>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <p>Built for honest appetites.</p>
   </div>
-  <p>© 2026 Remark · remarks.co.in</p>
 </footer>
 
 </body>
