@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Delete your account — remark</title>
+<meta name="description" content="How to permanently delete your remark account and everything in it. Available in the app, with an email route if you cannot sign in."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="canonical" href="https://remarks.co.in/delete-account"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://remarks.co.in/delete-account"/>
+<meta property="og:site_name" content="remark"/>
+<meta property="og:title" content="Delete your account — remark"/>
+<meta property="og:description" content="Delete your remark account and everything in it, permanently."/>
+<meta property="og:image" content="https://remarks.co.in/og-image.png"/>
+<meta property="og:locale" content="en_IN"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Delete your account — remark"/>
+<meta name="twitter:description" content="Delete your remark account and everything in it, permanently."/>
+<meta name="twitter:image" content="https://remarks.co.in/og-image.png"/>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+  /* Obsidian Glass — same tokens as the landing page and the app.
+     --ink is the TEXT colour here, not a background; --bg0/--bg1 are the
+     surfaces. Saffron is rationed to numerals, links and rules. */
+  :root {
+    --bg: #050505;
+    --bg1: #0c0d0f;
+    --surface: rgba(255,255,255,0.02);
+    --surface-2: rgba(255,255,255,0.05);
+    --fill2: rgba(255,255,255,0.07);
+    --edge: rgba(255,255,255,0.12);
+    --edge-lit: rgba(255,255,255,0.22);
+    --ink: #f4f4f5;
+    --ink-mid: rgba(244,244,245,0.62);
+    --ink-low: rgba(244,244,245,0.38);
+    --accent: #F5A623;
+    --accent-bright: #F5A623;
+    --good: #4CAF7D;
+    --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --mono: 'Space Mono', ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    font-feature-settings: "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV — mirrors the landing page */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(5, 5, 5, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--edge);
+  }
+  .nav-logo img { height: 24px; display: block; }
+  .nav-btn {
+    background: var(--fill2); color: var(--ink);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.25);
+    padding: 9px 20px; border-radius: 100px;
+    font-size: 0.84rem; font-weight: 700; letter-spacing: -0.01em;
+    text-decoration: none; transition: background .2s, border-color .2s;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.11); border-color: var(--edge-lit); }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 124px 24px 96px; }
+
+  header { border-bottom: 1px solid var(--edge); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent-bright); display: block; }
+  h1 { font-size: clamp(30px, 5.4vw, 42px); line-height: 1.14; margin: 0 0 12px; letter-spacing: -0.035em; font-weight: 800; }
+  .dates { font-size: 13.5px; color: var(--ink-mid); margin: 0; }
+
+  h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 44px 0 14px;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 90px;
+  }
+  h2 .num { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-right: 10px; }
+  h3 { font-size: 15.5px; margin: 26px 0 8px; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--accent-bright);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+    font-size: 15px;
+  }
+  .lede p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--surface-2);
+    border: 1px solid var(--edge);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-size: 14.5px;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.warn { border-color: rgba(245, 166, 35, 0.34); background: rgba(245, 166, 35, 0.06); }
+
+  .table-scroll { overflow-x: auto; margin: 18px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 460px; }
+  th, td { text-align: left; padding: 11px 14px 11px 0; border-bottom: 1px solid var(--edge); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-low); font-weight: 600; }
+  td:first-child { color: var(--ink); font-weight: 500; padding-right: 24px; }
+  table.compact { min-width: 420px; }
+  table.compact td:first-child { white-space: nowrap; }
+  .tag-public { color: var(--accent); font-family: var(--mono); font-size: 12px; }
+  .tag-private { color: var(--good); font-family: var(--mono); font-size: 12px; }
+
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--edge);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .contact-box p { margin-bottom: 6px; }
+
+  /* FOOTER — mirrors the landing page */
+  .site-footer {
+    background: var(--bg1);
+    border-top: 1px solid var(--edge);
+    padding: 36px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .site-footer img { height: 20px; display: block; }
+  .site-footer p { font-size: 0.8rem; color: rgba(245, 240, 232, 0.32); font-weight: 400; }
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .footer-links { display: flex; gap: 7px; font-size: 0.8rem; align-items: center; }
+  .footer-links a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--accent-bright); }
+  .footer-links a[aria-current="page"] { color: rgba(245, 240, 232, 0.28); pointer-events: none; }
+  .footer-links .sep { color: rgba(245, 240, 232, 0.26); }
+
+  @media (max-width: 900px) {
+    .site-nav { padding: 16px 20px; }
+    .wrap { padding: 104px 20px 72px; }
+    .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    .footer-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <a href="/#waitlist" class="nav-btn">Join waitlist</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Your data</div>
+  <h1>Delete your account</h1>
+  <p class="dates">Applies to diner accounts on the remark app</p>
+</header>
+
+<div class="lede">
+  <p><strong>You can delete your remark account yourself, from inside the app, at any time.</strong> There is no waiting period and nothing to request from us. Deletion is immediate and permanent.</p>
+  <p>This page exists so the route is findable without installing the app. If you can still sign in, use the app — it is faster and you stay in control of the whole thing.</p>
+</div>
+
+<h2>In the app</h2>
+<ol>
+  <li>Open remark and go to the <strong>Profile</strong> tab.</li>
+  <li>Scroll to the bottom and tap <strong>Delete account</strong>.</li>
+  <li>Type <strong>DELETE</strong> to confirm.</li>
+</ol>
+<p>Your account is erased straight away and you are signed out.</p>
+
+<h2>What is deleted</h2>
+<p>Everything tied to your account is removed from our database, not merely hidden:</p>
+<ul>
+  <li>Your profile, username, display name, bio and avatar</li>
+  <li>Every review you have written, and every photo attached to them</li>
+  <li>Any delivery order screenshots you uploaded as proof</li>
+  <li>Your check-in history</li>
+  <li>Your likes on other people&rsquo;s reviews</li>
+  <li>Your points balance and points history, including unredeemed points</li>
+  <li>Reward redemptions, including any unused codes</li>
+  <li>Your sign-in credentials</li>
+</ul>
+<p>Photos are deleted from file storage as well as from the database. Restaurant scores are recalculated immediately, so your ratings stop counting the moment the account goes.</p>
+
+<h2>What is kept, and why</h2>
+<p>Two narrow things survive, and neither identifies you:</p>
+<ul>
+  <li><strong>Moderation records.</strong> If a review of yours was reported or removed, the record of that decision is retained so the same abuse cannot simply be repeated with a new account. It carries no personal details.</li>
+  <li><strong>Payment records for any donation you made.</strong> Indian accounting rules require the transaction to stay on the books. Your name, email and account link are stripped from it and it becomes anonymous.</li>
+</ul>
+<p>Aggregate restaurant scores also remain, recalculated without your input. They are statistics about restaurants, not about you.</p>
+
+<h2>Points are forfeited</h2>
+<p>Unredeemed points have no cash value and cannot be transferred or refunded. If you are holding points you want to use, redeem them before you delete.</p>
+
+<h2>If you cannot use the app</h2>
+<p>Email <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a> from the address on your account and ask for deletion. We will verify it is you and confirm when it is done.</p>
+<p>Use this route if any of the following apply:</p>
+<ul>
+  <li>You have already uninstalled the app and cannot sign in</li>
+  <li>You added or claimed a restaurant listing. In-app deletion is blocked for these accounts so the listing can be transferred first rather than orphaned</li>
+  <li>You have a restaurant owner account on the dashboard rather than a diner account</li>
+</ul>
+
+<h2>Questions</h2>
+<p>What we collect and why is set out in the <a href="/privacy">Privacy Policy</a>. For anything else, write to <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>.</p>
+
+</div>
+
+<footer class="site-footer">
+  <a href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <p>© 2026 remark · remarks.co.in</p>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <span class="sep">&amp;</span>
+      <a href="/privacy" aria-current="page">Privacy</a>
+    </div>
+    <p>Built for honest appetites.</p>
+  </div>
+</footer>
+
+</body>
+</html>
