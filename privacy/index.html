@@ -174,6 +174,8 @@
   .footer-links a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
   .footer-links a:hover { color: var(--accent-bright); }
   .footer-links a[aria-current="page"] { color: rgba(245, 240, 232, 0.28); pointer-events: none; }
+  .footer-mail a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
+  .footer-mail a:hover { color: var(--accent-bright); }
   .footer-links .sep { color: rgba(245, 240, 232, 0.26); }
 
   @media (max-width: 900px) {
@@ -196,7 +198,7 @@
 <header>
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="dates">Effective 28 July 2026 · Last updated 28 July 2026</p>
+  <p class="dates">Effective 28 July 2026 · Last updated 3 October 2026</p>
 </header>
 
 <div class="lede">
@@ -237,11 +239,15 @@
   <p>We also do not currently strip camera metadata (EXIF) from uploaded images, which can include the location where a photo was taken. If that concerns you, disable location tagging in your camera app.</p>
 </div>
 
+<h3>Table bookings</h3>
+<p>If you book a table, we collect the name for the booking, your mobile number, the party size, the date and time, and anything optional you add — an occasion, a company or group name, or a note for the restaurant. The restaurant you book with sees all of this so they can hold your table and reach you if they need to. <strong>Your mobile number is deleted 30 days after the booking date.</strong> The rest of the booking stays in your booking history until you delete your account.</p>
+<p>A booking is never used to verify a visit and never shares your location. If you check in at the restaurant around your table time, we mark the booking as attended — the restaurant sees that you arrived, not where you were.</p>
+
 <h3>Restaurant owner information</h3>
 <p>For owners: your business details, your FSSAI licence number and a copy of the licence document, and your restaurant's address and location. FSSAI documents are stored privately and are visible only to you and to our review team.</p>
 
 <h3>Activity data</h3>
-<p>Your points balance and points history, reward redemptions, complaints you raise, and reports you file about other reviews.</p>
+<p>Your points balance and points history, reward redemptions, table bookings, complaints you raise, and reports you file about other reviews.</p>
 
 <h3>Technical data</h3>
 <p>On the web dashboards, we set <strong>strictly necessary session cookies</strong> to keep you signed in. There are no advertising or analytics cookies. On mobile, your session is stored securely on your device (iOS Keychain / Android Keystore) and no cookies are used.</p>
@@ -265,7 +271,8 @@
   <li><strong>Scoring</strong> — calculating each restaurant's rolling 30-day score.</li>
   <li><strong>Fraud prevention</strong> — detecting fake reviews, duplicate orders, and coordinated review attacks.</li>
   <li><strong>Rewards</strong> — awarding points and issuing redemption codes.</li>
-  <li><strong>Communication</strong> — sending transactional email such as confirmation codes, reward codes, and complaint updates. We do not send marketing email.</li>
+  <li><strong>Bookings</strong> — holding your table and letting the restaurant contact you about it.</li>
+  <li><strong>Communication</strong> — sending transactional email such as confirmation codes, reward codes, booking confirmations, and complaint updates. We do not send marketing email.</li>
   <li><strong>Support and safety</strong> — resolving complaints and enforcing our Terms.</li>
 </ul>
 <p>We process this data on the basis of the consent you give when you create an account and when you grant location permission, as required by the DPDP Act. You can withdraw consent at any time by deleting your account.</p>
@@ -283,12 +290,14 @@
   <tr><td>Points balance and points history</td><td><span class="tag-private">PRIVATE</span></td></tr>
   <tr><td>Reward redemptions</td><td><span class="tag-private">PRIVATE</span></td></tr>
   <tr><td>Delivery order proof and screenshots</td><td><span class="tag-private">PRIVATE</span></td></tr>
+  <tr><td>Table bookings, including your mobile number</td><td><span class="tag-private">PRIVATE</span> — shared with that restaurant</td></tr>
   <tr><td>Complaints you raise</td><td><span class="tag-private">PRIVATE</span> — shared with that restaurant</td></tr>
   <tr><td>Reports you file about reviews</td><td><span class="tag-private">PRIVATE</span> — visible only to our team</td></tr>
   <tr><td>Owner contact details and FSSAI documents</td><td><span class="tag-private">PRIVATE</span></td></tr>
 </table>
 </div>
 <p>When you redeem a reward, the restaurant validating your code sees your username, display name, and avatar so they can confirm it is you. They see nothing else.</p>
+<p>When you book a table, that restaurant sees the name, mobile number, party size and notes on the booking, and whether you arrived. They never see your location.</p>
 
 <h2><span class="num">6</span>Who we share data with</h2>
 <p>We share personal data with exactly three service providers, each of which processes it only to run remark:</p>
@@ -310,6 +319,7 @@
   <li>all your check-ins and all stored GPS coordinates;</li>
   <li>your points balance, points history, and any unused reward codes;</li>
   <li>your delivery order proofs and screenshots;</li>
+  <li>your table bookings — any upcoming booking is cancelled first, and the restaurant is told the table is free;</li>
   <li>your complaints, reports and likes;</li>
   <li>your login credentials.</li>
 </ul>
@@ -374,6 +384,7 @@
       <span class="sep">&amp;</span>
       <a href="/privacy" aria-current="page">Privacy</a>
     </div>
+    <p class="footer-mail"><a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
     <p>Built for honest appetites.</p>
   </div>
 </footer>
