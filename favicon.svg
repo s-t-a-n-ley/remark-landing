@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="180.46 180.47 206 206">
+  <!-- remark "r." with no background. The r is near-black on light tab bars and
+       white on dark ones; the full stop is the logo's orange either way. -->
+  <style>
+    .r { fill: #0A0A0A; }
+    @media (prefers-color-scheme: dark) { .r { fill: #FFFFFF; } }
+  </style>
+  <path class="r" d="M187.45,190.09h56.03l2.03,23.95c4.87-6.5,11.57-12.72,20.09-18.67c8.53-5.95,19.55-8.93,33.09-8.93c5.13,0,9.54,0.27,13.2,0.81c3.66,0.55,7.24,1.49,10.76,2.84l-9.34,51.56c-5.96-1.89-12.99-2.84-21.11-2.84c-13.8,0-24.97,4.13-33.49,12.38c-8.53,8.26-12.79,19.96-12.79,35.12v94.19h-58.46V190.09z"/>
+  <path fill="#F79524" d="M313.3,315.94h66.17v64.55H313.3z"/>
+</svg>
