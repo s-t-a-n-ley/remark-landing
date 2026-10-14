@@ -197,7 +197,7 @@
 <header>
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="dates">Effective 28 July 2026 · Last updated 13 October 2026</p>
+  <p class="dates">Effective 28 July 2026 · Last updated 14 October 2026</p>
 </header>
 
 <div class="lede">
@@ -247,16 +247,19 @@
 <h3>Activity data</h3>
 <p>Your points balance and points history, reward redemptions, table bookings, complaints you raise, and reports you file about other reviews.</p>
 
+<h3>Notifications</h3>
+<p>If you turn on notifications, we store a token for your phone that lets us send them, and whether it is an Android phone or an iPhone — nothing else about the device. The token is deleted when you sign out, when you delete your account, or if you haven't opened remark for 60 days. You can turn notifications off at any time in your phone's settings.</p>
+
 <h3>Technical data</h3>
 <p>On the web dashboards, we set <strong>strictly necessary session cookies</strong> to keep you signed in. There are no advertising or analytics cookies. On mobile, your session is stored securely on your device (iOS Keychain / Android Keystore) and no cookies are used.</p>
 
 <h2><span class="num">3</span>What we deliberately do <em>not</em> collect</h2>
 <p>We think this matters as much as what we do collect. remark contains:</p>
 <ul>
-  <li><strong>No analytics software.</strong> No Google Analytics, PostHog, Mixpanel, Firebase, or equivalent.</li>
+  <li><strong>No analytics software.</strong> No Google Analytics, PostHog, Mixpanel, Firebase Analytics, or equivalent.</li>
   <li><strong>No advertising networks or third-party trackers</strong> of any kind.</li>
   <li><strong>No crash-reporting or session-recording tools.</strong></li>
-  <li><strong>No device fingerprinting</strong> — we do not collect advertising IDs, device identifiers, or hardware information.</li>
+  <li><strong>No device fingerprinting</strong> — we do not collect advertising IDs or hardware information. The only device-specific value we keep is the notification token described above, and only if you turn notifications on.</li>
   <li><strong>No IP address logging</strong> in the application, and no browsing history.</li>
   <li><strong>No background location</strong> and no movement tracking.</li>
   <li><strong>No payment card data.</strong> We do not process card payments at all.</li>
@@ -298,11 +301,12 @@
 <p>When you book a table, that restaurant sees the name, mobile number, party size and notes on the booking, and whether you arrived. They never see your location.</p>
 
 <h2><span class="num">6</span>Who we share data with</h2>
-<p>We share personal data with exactly three service providers, each of which processes it only to run remark:</p>
+<p>We share personal data with exactly four service providers, each of which processes it only to run remark:</p>
 <ul>
   <li><strong>Supabase</strong> — our database, authentication, and file storage provider. All account data, reviews, and uploads are stored on Supabase infrastructure.</li>
   <li><strong>Google Maps Platform</strong> — provides maps and place search. Map usage sends the map view and search queries to Google. Your stored check-in coordinates are not sent to Google.</li>
   <li><strong>Resend</strong> — delivers our transactional emails. Resend receives your email address and the contents of that email.</li>
+  <li><strong>Expo</strong> — relays notifications to your phone if you turn them on. Expo receives your phone's notification token and the text of each notification, and hands it to Google's Firebase Cloud Messaging (Android) or Apple's Push Notification service (iPhone), which deliver it to your device.</li>
 </ul>
 <p>We may also disclose data where legally required, for example in response to a valid order from an Indian court or law-enforcement authority.</p>
 <p><strong>We do not sell personal data, and we do not share it with advertisers or data brokers.</strong> There is no third-party advertising on remark.</p>
@@ -319,6 +323,7 @@
   <li>your delivery order proofs and screenshots;</li>
   <li>your table bookings — any upcoming booking is cancelled first, and the restaurant is told the table is free;</li>
   <li>your complaints, reports and likes;</li>
+  <li>your notifications, and the notification token for your phone;</li>
   <li>your login credentials.</li>
 </ul>
 <p>There is no recovery period — once deleted, your data cannot be restored, and any unused points are forfeited. Affected restaurant scores are recalculated so your removed reviews no longer count.</p>
