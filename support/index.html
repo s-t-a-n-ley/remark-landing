@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Support — remark</title>
+<meta name="description" content="Get help with remark: check-ins, reviews, points, reporting and blocking, bookings, and how to reach us."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="canonical" href="https://remarks.co.in/support"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://remarks.co.in/support"/>
+<meta property="og:site_name" content="remark"/>
+<meta property="og:title" content="Support — remark"/>
+<meta property="og:description" content="Help with check-ins, reviews, points and your account, and how to reach the remark team."/>
+<meta property="og:image" content="https://remarks.co.in/og-image.png"/>
+<meta property="og:locale" content="en_IN"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Support — remark"/>
+<meta name="twitter:description" content="Help with check-ins, reviews, points and your account, and how to reach the remark team."/>
+<meta name="twitter:image" content="https://remarks.co.in/og-image.png"/>
+
+<link rel="icon" href="/favicon.ico" sizes="32x32"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+
+<style>
+  /* Obsidian Glass — same tokens as the landing page and the app.
+     --ink is the TEXT colour here, not a background; --bg0/--bg1 are the
+     surfaces. Saffron is rationed to numerals, links and rules. */
+  :root {
+    --bg: #050505;
+    --bg1: #0c0d0f;
+    --surface: rgba(255,255,255,0.02);
+    --surface-2: rgba(255,255,255,0.05);
+    --fill2: rgba(255,255,255,0.07);
+    --edge: rgba(255,255,255,0.12);
+    --edge-lit: rgba(255,255,255,0.22);
+    --ink: #f4f4f5;
+    --ink-mid: rgba(244,244,245,0.62);
+    --ink-low: rgba(244,244,245,0.38);
+    --accent: #F5A623;
+    --accent-bright: #F5A623;
+    --good: #4CAF7D;
+    --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --mono: 'Space Mono', ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.7;
+    font-feature-settings: "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV — mirrors the landing page */
+  .site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(5, 5, 5, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--edge);
+  }
+  .nav-logo img { height: 24px; display: block; }
+  .nav-btn {
+    background: var(--fill2); color: var(--ink);
+    border: 1px solid var(--edge);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(0,0,0,.25);
+    padding: 9px 20px; border-radius: 100px;
+    font-size: 0.84rem; font-weight: 700; letter-spacing: -0.01em;
+    text-decoration: none; transition: background .2s, border-color .2s;
+  }
+  .nav-btn:hover { background: rgba(255,255,255,0.11); border-color: var(--edge-lit); }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 124px 24px 96px; }
+
+  header { border-bottom: 1px solid var(--edge); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent-bright); display: block; }
+  h1 { font-size: clamp(30px, 5.4vw, 42px); line-height: 1.14; margin: 0 0 12px; letter-spacing: -0.035em; font-weight: 800; }
+  .dates { font-size: 13.5px; color: var(--ink-mid); margin: 0; }
+
+  h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin: 44px 0 14px;
+    letter-spacing: -0.01em;
+    scroll-margin-top: 90px;
+  }
+  h2 .num { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-right: 10px; }
+  h3 { font-size: 15.5px; margin: 26px 0 8px; color: var(--ink); }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 8px; }
+  strong { color: var(--ink); font-weight: 600; }
+
+  .lede {
+    background: var(--surface);
+    border: 1px solid var(--edge);
+    border-left: 3px solid var(--accent-bright);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+    margin-bottom: 36px;
+    font-size: 15px;
+  }
+  .lede p:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--surface-2);
+    border: 1px solid var(--edge);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-size: 14.5px;
+  }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout.warn { border-color: rgba(245, 166, 35, 0.34); background: rgba(245, 166, 35, 0.06); }
+
+  .table-scroll { overflow-x: auto; margin: 18px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 460px; }
+  th, td { text-align: left; padding: 11px 14px 11px 0; border-bottom: 1px solid var(--edge); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-low); font-weight: 600; }
+  td:first-child { color: var(--ink); font-weight: 500; padding-right: 24px; }
+  table.compact { min-width: 420px; }
+  table.compact td:first-child { white-space: nowrap; }
+  .tag-public { color: var(--accent); font-family: var(--mono); font-size: 12px; }
+  .tag-private { color: var(--good); font-family: var(--mono); font-size: 12px; }
+
+  .contact-box {
+    background: var(--surface);
+    border: 1px solid var(--edge);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .contact-box p { margin-bottom: 6px; }
+
+  /* FOOTER — mirrors the landing page */
+  .site-footer {
+    background: var(--bg1);
+    border-top: 1px solid var(--edge);
+    padding: 36px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .site-footer img { height: 20px; display: block; }
+  .site-footer p { font-size: 0.8rem; color: rgba(245, 240, 232, 0.32); font-weight: 400; }
+  .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .footer-links { display: flex; gap: 7px; font-size: 0.8rem; align-items: center; }
+  .footer-links a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
+  .footer-links a:hover { color: var(--accent-bright); }
+  .footer-links a[aria-current="page"] { color: rgba(245, 240, 232, 0.28); pointer-events: none; }
+  .footer-mail a { color: rgba(245, 240, 232, 0.55); text-decoration: none; transition: color .2s; }
+  .footer-mail a:hover { color: var(--accent-bright); }
+  .footer-links .sep { color: rgba(245, 240, 232, 0.26); }
+
+  @media (max-width: 900px) {
+    .site-nav { padding: 16px 20px; }
+    .wrap { padding: 104px 20px 72px; }
+    .site-footer { flex-direction: column; gap: 16px; text-align: center; padding: 32px 24px; }
+    .footer-right { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a class="nav-logo" href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <a href="/#waitlist" class="nav-btn">Join waitlist</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Help</div>
+  <h1>Support</h1>
+  <p class="dates">For diners using the remark app, and for restaurant owners</p>
+</header>
+
+<div class="lede">
+  <p><strong>Email <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a> and a person on the remark team will read it.</strong></p>
+  <p>In the app, <strong>Profile &rarr; Help &amp; Support</strong> opens an email to the same address. Most answers are below.</p>
+</div>
+
+<h2>Contact us</h2>
+<div class="contact-box">
+  <p><strong>Email:</strong> <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
+  <p>Write from the email address on your remark account so we can find it. If your question is about a restaurant, tell us its name and area.</p>
+</div>
+
+<h2>Checking in</h2>
+<p>A check-in is how remark knows you were really there. If it won&rsquo;t go through, it is usually one of these:</p>
+<ul>
+  <li><strong>Distance.</strong> You need to be within 100 metres of the restaurant, with location access allowed for remark.</li>
+  <li><strong>City.</strong> remark is live in Trivandrum only, for now.</li>
+  <li><strong>Once a day.</strong> You can check in at the same restaurant once every 24 hours.</li>
+  <li><strong>The restaurant.</strong> A delivery-only place can&rsquo;t be checked into, and a restaurant that is temporarily closed or paused isn&rsquo;t taking check-ins. The app tells you when this is the reason.</li>
+</ul>
+
+<h2>Writing a review</h2>
+<ul>
+  <li><strong>Dine-in reviews</strong> need a check-in at that restaurant in the last 48 hours. Each check-in backs one review.</li>
+  <li><strong>Delivery reviews</strong> need the order ID from your delivery app, for an order from the last 24 hours. Each order can be reviewed once.</li>
+  <li>Every review needs your experience in words and <strong>at least one photo</strong>, up to four.</li>
+  <li>You can review the same restaurant once every 24 hours.</li>
+</ul>
+
+<h3>Editing or deleting a review</h3>
+<p>Tap the three-dot menu (&ctdot;) on your review. You can edit it for 15 minutes after posting, and delete it at any time. Deleting a review takes back the points it earned, and does not reset the 24-hour limit for that restaurant.</p>
+
+<h2>Points</h2>
+<p>Points from a review unlock 24 hours after you post it, as long as the review is still up. If a review is deleted or removed, its points are taken back. Your balance is under <strong>Profile &rarr; Points &amp; Rewards</strong>.</p>
+
+<h2>Reporting and blocking</h2>
+<ul>
+  <li><strong>Report a review</strong> that is fake, abusive or not about the restaurant: tap the three-dot menu (&ctdot;) on it and choose <strong>Report</strong>. Reports go to the remark team.</li>
+  <li><strong>Block a reviewer</strong> from the same menu with <strong>Block</strong>, and you won&rsquo;t see their reviews. To undo it, go to <strong>Profile &rarr; Blocked Accounts</strong>.</li>
+</ul>
+
+<h2>A problem with a restaurant</h2>
+<p>On the restaurant&rsquo;s page, tap <strong>Report a problem with this restaurant</strong>. Use it for the food or the service, or for a listing that is wrong: the name, the location, or a place that has closed.</p>
+<p>Complaints are private. Only you, the restaurant&rsquo;s owner and the remark team can see them. Follow yours under <strong>Profile &rarr; Your Complaints</strong>.</p>
+
+<h2>Table bookings</h2>
+<p>Your bookings are under <strong>Profile &rarr; Your Bookings</strong>. Open one to cancel it, or to withdraw a group request the restaurant hasn&rsquo;t answered yet.</p>
+
+<h2>Your account</h2>
+<p>You can delete your account yourself, in the app, at any time. <a href="/delete-account">Delete your account</a> explains how, what is removed, and what to do if you can&rsquo;t sign in.</p>
+<p>What we collect and why is in the <a href="/privacy">Privacy Policy</a>, which also gives the contact for grievances. The rules for using remark are in the <a href="/terms">Terms of Service</a>.</p>
+
+<h2>Restaurant owners</h2>
+<p>If you own a restaurant that is on remark, or want yours to be, email <a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a> with the restaurant&rsquo;s name and area.</p>
+
+</div>
+
+<footer class="site-footer">
+  <a href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark"/></a>
+  <p>© 2026 remark · remarks.co.in</p>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <span class="sep">&amp;</span>
+      <a href="/privacy">Privacy</a>
+    </div>
+    <p class="footer-mail"><a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a></p>
+    <p>Built for honest appetites.</p>
+  </div>
+</footer>
+
+</body>
+</html>
