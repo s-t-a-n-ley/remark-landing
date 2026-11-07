@@ -103,6 +103,9 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .h2{margin:0;font-size:clamp(32px,3.6vw,46px);line-height:1.08;font-weight:700;letter-spacing:-.03em}
 .h3{margin:0;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.02em}
 .saffron{color:#F5A623}
+.tw-line{white-space:nowrap}
+.caret{font-weight:300;margin-left:.04em;animation:caretBlink 1.06s step-end infinite}
+@keyframes caretBlink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
 .lead{margin:22px 0 0;font-size:19px;line-height:1.55;color:rgba(244,244,245,.72);max-width:30em}
 .sub{margin:14px 0 0;font-size:18px;color:rgba(244,244,245,.72);max-width:36em}
 .body{margin:8px 0 0;font-size:16px;color:rgba(244,244,245,.72)}
@@ -120,7 +123,6 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .input{display:block;width:100%;box-sizing:border-box;height:52px;padding:0 16px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#f4f4f5;font-family:inherit;font-size:16px;outline:none}
 .input:focus{border-color:rgba(245,166,35,.6)}
 .input::placeholder{color:rgba(244,244,245,.62)}
-.form-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:10px}
 .note{font-size:14px;color:rgba(244,244,245,.62)}
 .owner-line{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;max-width:520px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:15.5px;color:rgba(244,244,245,.72)}
 .owner-line a{display:inline-flex;align-items:center;gap:5px;color:#f4f4f5;font-weight:700}
@@ -207,7 +209,6 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .hero{padding:44px 0 64px}
 .steps,.three,.two,.plans,.tiles{grid-template-columns:minmax(0,1fr)}
 .fields{grid-template-columns:minmax(0,1fr)}
-.form-row .cta{width:100%}
 .head{margin-bottom:32px}
 .lead{font-size:18px}
 .hide-phone{display:none}
@@ -230,7 +231,7 @@ img{max-width:100%}
 .wl-spinner{display:none;width:18px;height:18px;border:2px solid rgba(20,20,20,.3);border-top-color:#141414;border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (prefers-reduced-motion:reduce){.wl-spinner{animation-duration:2s}.faq summary svg{transition:none}}
+@media (prefers-reduced-motion:reduce){.wl-spinner{animation-duration:2s}.faq summary svg{transition:none}.caret{display:none}}
 .nav-quiet{white-space:nowrap}
 @media (max-width:379px){.hero-phone .phone,.get-phone .phone{zoom:.9}.hide-narrow{display:none}}
 @media (max-width:339px){.hero-phone .phone,.get-phone .phone{zoom:.8}}
@@ -249,13 +250,15 @@ img{max-width:100%}
 <div class="wrap hero-grid">
 <div>
 <p class="place"><span class="dot"></span>Opening in Trivandrum</p>
-<h1 class="h1">Every rating<br>here <span class="saffron">expires.</span></h1>
+<h1 class="h1" aria-label="Every rating here expires."><span aria-hidden="true">Every rating<br><span class="tw-line">here <span class="saffron" id="tw">expires.</span><span class="saffron caret">|</span></span></span></h1>
 <p class="lead">remark shows how a restaurant is doing right now. Every score comes from the last 30 days, and every review needs a check-in or proof of an order.</p>
 <div class="fields">
 <label><span class="sr">Your name</span><input class="input" id="wl-name" type="text" placeholder="Your name" autocomplete="given-name"></label>
 <label><span class="sr">Your email</span><input class="input" id="wl-email" type="email" placeholder="your@email.com" autocomplete="email"></label>
+<label><span class="sr">Your city, optional</span><input class="input" id="wl-city" type="text" placeholder="Your city (optional)" autocomplete="address-level2" maxlength="80"></label>
+<button type="button" class="cta" id="wl-btn" onclick="handleWL()"><span id="wl-btn-text">Join the waitlist</span><span class="wl-spinner" id="wl-spinner"></span></button>
 </div>
-<div class="form-row"><button type="button" class="cta" id="wl-btn" onclick="handleWL()"><span id="wl-btn-text">Join the waitlist</span><span class="wl-spinner" id="wl-spinner"></span></button><span class="note" id="wl-msg" role="status">One email when we launch. No spam.</span></div>
+<p class="note" id="wl-msg" role="status" style="margin: 12px 0 0">One email when we launch. No spam.</p>
 <p class="owner-line"><span>Own a restaurant?</span><a href="/restaurants">List it free<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a></p>
 </div>
 <div class="hero-phone">
@@ -473,6 +476,42 @@ img{max-width:100%}
 </div>
 </footer>
 <script>
+// ── Hero typewriter ────────────────────────────────────────────
+// Same constants as the TypeWriter in the app (apps/user/components/TypeWriter.tsx)
+// so the two feel like one product. Words carry their own full stop. Under
+// reduced motion the word stays "expires." and the caret is hidden.
+(() => {
+  const el = document.getElementById('tw');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const WORDS = ['expires.', 'fades.', 'resets.', 'renews.'];
+  const TYPING_SPEED = 85, DELETE_SPEED = 55, PAUSE_AFTER = 1800, PAUSE_BEFORE = 350;
+  let wordIdx = 0, charIdx = WORDS[0].length, phase = 'holding';
+
+  function tick() {
+    const word = WORDS[wordIdx];
+    if (phase === 'typing') {
+      el.textContent = word.slice(0, charIdx);
+      charIdx++;
+      if (charIdx > word.length) { phase = 'holding'; setTimeout(tick, PAUSE_AFTER); }
+      else setTimeout(tick, TYPING_SPEED);
+    } else if (phase === 'holding') {
+      phase = 'deleting';
+      setTimeout(tick, DELETE_SPEED);
+    } else {
+      charIdx--;
+      el.textContent = word.slice(0, charIdx);
+      if (charIdx <= 0) {
+        wordIdx = (wordIdx + 1) % WORDS.length;
+        phase = 'typing';
+        setTimeout(tick, PAUSE_BEFORE);
+      } else setTimeout(tick, DELETE_SPEED);
+    }
+  }
+  // "expires." gets the same full hold as every other word before it starts.
+  setTimeout(tick, PAUSE_AFTER);
+})();
+
 // ── 30-day score ───────────────────────────────────────────────
 // The app's recency weight, (30 - age) / 30, and its colour rule over a fixed
 // set of example reviews. Drag from day 0 to day 30 and the window slides.
@@ -532,6 +571,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 async function handleWL() {
   const nameInput  = document.getElementById('wl-name');
   const emailInput = document.getElementById('wl-email');
+  const cityInput  = document.getElementById('wl-city');
   const msg        = document.getElementById('wl-msg');
   const btn        = document.getElementById('wl-btn');
   const btnText    = document.getElementById('wl-btn-text');
@@ -539,6 +579,7 @@ async function handleWL() {
 
   const name  = nameInput.value.trim();
   const email = emailInput.value.trim();
+  const city  = cityInput.value.trim();
 
   if (!name) {
     msg.style.color = '#E85438';
@@ -568,7 +609,7 @@ async function handleWL() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
         },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, city }),
       }
     );
 
@@ -596,8 +637,10 @@ async function handleWL() {
     btn.style.color = '#0A0A0A';
     nameInput.value    = '';
     emailInput.value   = '';
+    cityInput.value    = '';
     nameInput.disabled = true;
     emailInput.disabled = true;
+    cityInput.disabled = true;
     msg.style.color    = 'rgba(76,175,125,0.9)';
     msg.textContent    = `Done, ${name}! Check your promotions/inbox for a confirmation.`;
 
@@ -610,7 +653,7 @@ async function handleWL() {
   }
 }
 
-['wl-name', 'wl-email'].forEach(id => {
+['wl-name', 'wl-email', 'wl-city'].forEach(id => {
   document.getElementById(id).addEventListener('keydown', e => {
     if (e.key === 'Enter') handleWL();
   });
