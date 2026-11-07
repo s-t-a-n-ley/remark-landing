@@ -131,7 +131,7 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .screen{position:relative;overflow:hidden;border-radius:37px;background:#050505}
 .z{position:relative;width:390px;zoom:.8;box-sizing:border-box;background:#050505;color:#f4f4f5}
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.shot{height:400px;box-sizing:border-box;overflow:hidden;display:flex;justify-content:center;padding-top:32px;margin-bottom:22px;border-radius:24px;background:#0c0d0f;border:1px solid rgba(255,255,255,.08)}
+.shot{height:400px;box-sizing:border-box;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:22px;border-radius:24px;background:#0c0d0f;border:1px solid rgba(255,255,255,.08)}
 .shot .phone{zoom:.84;flex:0 0 auto;box-shadow:none}
 .foot-note{margin:36px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:16px;color:rgba(244,244,245,.72)}
 .score-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:center}
@@ -225,7 +225,12 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .closing .cta{width:100%}
 .btn-row .cta,.btn-row .quiet{flex:1 1 auto}
 }
-img{max-width:100%}
+/* As on the first landing page: no selecting, no tap flash, no saving photos.
+   Typing and the contact email stay usable. */
+body{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+input,.copyable{-webkit-user-select:text;-moz-user-select:text;user-select:text;-webkit-touch-callout:default}
+img{max-width:100%;pointer-events:none;-webkit-user-drag:none}
+.nav-logo{display:block;background:none;border:none;padding:11px 0;cursor:pointer}
 :focus-visible{outline:2px solid #F5A623;outline-offset:2px}
 .cta:disabled{opacity:.6;cursor:not-allowed}
 .wl-spinner{display:none;width:18px;height:18px;border:2px solid rgba(20,20,20,.3);border-top-color:#141414;border-radius:50%;animation:spin .7s linear infinite}
@@ -234,13 +239,13 @@ img{max-width:100%}
 @media (prefers-reduced-motion:reduce){.wl-spinner{animation-duration:2s}.faq summary svg{transition:none}.caret{display:none}}
 .nav-quiet{white-space:nowrap}
 @media (max-width:379px){.hero-phone .phone,.get-phone .phone{zoom:.9}.hide-narrow{display:none}}
-@media (max-width:339px){.hero-phone .phone,.get-phone .phone{zoom:.8}}
+@media (max-width:339px){.hero-phone .phone,.get-phone .phone{zoom:.8}.shot .phone{zoom:.78}}
 </style>
 </head>
 <body>
 <header class="nav">
 <div class="wrap nav-in">
-<a href="/" aria-label="remark home"><img src="/remarkwhite.png" alt="remark" style="display: block; height: 22px; width: auto"></a>
+<button type="button" class="nav-logo" id="to-top" aria-label="Back to top"><img draggable="false" src="/remarkwhite.png" alt="remark" style="display: block; height: 22px; width: auto"></button>
 <nav class="nav-links" aria-label="Main"><a href="#how">How it works</a><a href="#questions">Questions</a></nav>
 <div class="nav-end"><a class="nav-quiet" href="/restaurants">For restaurants</a><a class="cta sm hide-phone" href="#join">Join the waitlist</a></div>
 </div>
@@ -264,7 +269,7 @@ img{max-width:100%}
 <div class="hero-phone">
 <div class="phone " role="img" aria-label="remark app, Discover screen, illustrative example"><div class="screen"><div class="z" style="height: 770px; padding-top: 10px; font-family: 'DM Sans', system-ui, sans-serif">
 <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 16px">
-<img src="/remarkwhite.png" alt="" style="height: 26px; width: auto">
+<img draggable="false" src="/remarkwhite.png" alt="" style="height: 26px; width: auto">
 <div style="display: flex; align-items: center; gap: 10px">
 <div style="width: 62px; display: flex; flex-direction: column; align-items: center; gap: 2px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="#F5A623" fill-rule="evenodd" d="M12 2.25c-3.73 0-6.75 2.9-6.75 6.6 0 4.6 5.3 10.7 6.2 11.7a.75.75 0 0 0 1.1 0c.9-1 6.2-7.1 6.2-11.7 0-3.7-3.02-6.6-6.75-6.6Zm0 9.25a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2Z"></path></svg><span style="font-size: 10px; line-height: 14px; color: rgba(244,244,245,0.62); white-space: nowrap">Pattom</span></div>
 <div style="width: 38px; height: 38px; border-radius: 14px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.62)" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.75" cy="10.75" r="6.25"></circle><path d="m15.5 15.5 4.75 4.75"></path></svg></div>
@@ -273,7 +278,7 @@ img{max-width:100%}
 </div>
 <div style="margin: 8px 16px 0; border-radius: 28px; overflow: hidden; background: #0c0d0f; border: 1px solid rgba(255,255,255,0.12); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22)">
 <div style="position: relative; height: 222px">
-<img src="/img/food-leaf.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<img draggable="false" src="/img/food-leaf.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 36%, rgba(0,0,0,0.42) 62%, rgba(0,0,0,0.8) 100%)"></div>
 <div style="position: absolute; top: 12px; right: 14px; display: flex; align-items: center; gap: 5px"><span style="width: 14px; height: 5px; border-radius: 3px; background: #f4f4f5"></span><span style="width: 5px; height: 5px; border-radius: 3px; background: rgba(244,244,245,0.45)"></span><span style="width: 5px; height: 5px; border-radius: 3px; background: rgba(244,244,245,0.45)"></span></div>
 <div style="position: absolute; left: 20px; bottom: 32px; display: flex; flex-direction: column; gap: 3px">
@@ -290,13 +295,13 @@ img{max-width:100%}
 <div style="display: flex; align-items: center; gap: 8px"><span style="width: 26px; height: 26px; border-radius: 13px; background: #5a4a3a; flex-shrink: 0"></span><span style="font-size: 13px; font-weight: 800">meera</span><span style="font-size: 8.5px; letter-spacing: 1.2px; color: #F5A623">DINE-IN VERIFIED</span></div>
 <div style="font-size: 13px; line-height: 18px; color: #f4f4f5">The lunch meals are the reason to come. Go early, the banana leaf lunch runs out by two.</div>
 </div>
-<img src="/img/food-thali.jpg" alt="" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover; flex-shrink: 0">
+<img draggable="false" src="/img/food-thali.jpg" alt="" style="width: 56px; height: 56px; border-radius: 12px; object-fit: cover; flex-shrink: 0">
 </div>
 </div>
 </div>
 <div style="margin: 14px 16px 0; border-radius: 28px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12)">
 <div style="position: relative; height: 222px">
-<img src="/img/food-biryani.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
+<img draggable="false" src="/img/food-biryani.jpg" alt="" style="display: block; width: 100%; height: 100%; object-fit: cover">
 <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.78) 100%)"></div>
 <div style="position: absolute; left: 20px; bottom: 14px; display: flex; flex-direction: column; gap: 3px">
 <div style="font-size: 20px; font-weight: 800; letter-spacing: -0.8px; line-height: 25px; color: #ffffff">Harbour Table</div>
@@ -316,11 +321,11 @@ img{max-width:100%}
 <div class="wrap">
 <div class="head"><h2 class="h2">A review you have to earn.</h2></div>
 <div class="steps">
-<div><div class="shot"><div class="phone " role="img" aria-label="Check-in screen showing restaurants within 100 metres"><div class="screen"><div class="z" style="height: 640px; padding: 22px 16px 0; font-family: 'DM Sans', system-ui, sans-serif">
+<div><div class="shot"><div class="phone " role="img" aria-label="Check-in screen showing restaurants within 100 metres"><div class="screen"><div class="z" style="height: 490px; padding: 22px 16px 0; font-family: 'DM Sans', system-ui, sans-serif">
 <div style="text-align: center; font-size: 18px; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 18px">Check-in</div>
 <div style="display: flex; flex-direction: column; gap: 10px">
 <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1)">
-<img loading="lazy" decoding="async" src="/img/food-leaf.jpg" alt="" style="width: 58px; height: 58px; border-radius: 14px; object-fit: cover; flex-shrink: 0">
+<img draggable="false" loading="lazy" decoding="async" src="/img/food-leaf.jpg" alt="" style="width: 58px; height: 58px; border-radius: 14px; object-fit: cover; flex-shrink: 0">
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
 <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.3px">Grace Cafe</span>
 <span style="font-size: 12.5px; color: rgba(244,244,245,0.62)">Pattom</span>
@@ -329,7 +334,7 @@ img{max-width:100%}
 <span style="font-size: 19px; font-weight: 800; letter-spacing: -0.4px; color: #4CAF7D">8.6</span>
 </div>
 <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1)">
-<img loading="lazy" decoding="async" src="/img/food-biryani.jpg" alt="" style="width: 58px; height: 58px; border-radius: 14px; object-fit: cover; flex-shrink: 0">
+<img draggable="false" loading="lazy" decoding="async" src="/img/food-biryani.jpg" alt="" style="width: 58px; height: 58px; border-radius: 14px; object-fit: cover; flex-shrink: 0">
 <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
 <span style="font-size: 16px; font-weight: 800; letter-spacing: -0.3px">Harbour Table</span>
 <span style="font-size: 12.5px; color: rgba(244,244,245,0.62)">Pattom</span>
@@ -343,7 +348,7 @@ img{max-width:100%}
 <span style="font-size: 12.5px; color: rgba(244,244,245,0.62)">Not listed here? Find it on the map</span>
 </div>
 </div></div></div></div><h3 class="h3">Check in</h3><p class="body">Open remark at the restaurant. It confirms you are within 100 metres.</p></div>
-<div><div class="shot"><div class="phone " role="img" aria-label="Review screen with a star rating, text and a photo"><div class="screen"><div class="z" style="height: 640px; padding: 22px 20px 0; font-family: 'DM Sans', system-ui, sans-serif">
+<div><div class="shot"><div class="phone " role="img" aria-label="Review screen with a star rating, text and a photo"><div class="screen"><div class="z" style="height: 490px; padding: 22px 20px 0; font-family: 'DM Sans', system-ui, sans-serif">
 <div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 12px">
 <span style="font-size: 10.5px; letter-spacing: 2px; color: rgba(244,244,245,0.62)">DINE-IN REVIEW</span>
 <span style="font-size: 18px; font-weight: 800; letter-spacing: -0.5px">Grace Cafe</span>
@@ -355,11 +360,11 @@ img{max-width:100%}
 <div style="padding: 14px 16px; border-radius: 18px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); font-size: 15px; line-height: 21px; color: #f4f4f5">The lunch meals are the reason to come. Go early, the banana leaf lunch runs out by two.</div>
 <div style="margin: 20px 0 8px; font-size: 10.5px; letter-spacing: 2px; color: rgba(244,244,245,0.62)">PHOTOS  ·  OPTIONAL</div>
 <div style="display: flex; gap: 10px">
-<img loading="lazy" decoding="async" src="/img/food-thali.jpg" alt="" style="width: 84px; height: 84px; border-radius: 16px; object-fit: cover">
+<img draggable="false" loading="lazy" decoding="async" src="/img/food-thali.jpg" alt="" style="width: 84px; height: 84px; border-radius: 16px; object-fit: cover">
 <div style="width: 84px; height: 84px; box-sizing: border-box; border-radius: 16px; border: 1.5px dashed rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; font-size: 11px; color: rgba(244,244,245,0.62)">Add</div>
 </div>
 </div></div></div></div><h3 class="h3">Review</h3><p class="body">Rate it, say what you thought and add photos if you like. You have 48 hours.</p></div>
-<div><div class="shot"><div class="phone " role="img" aria-label="Points screen showing available points and rewards"><div class="screen"><div class="z" style="height: 640px; padding: 22px 16px 0; font-family: 'DM Sans', system-ui, sans-serif">
+<div><div class="shot"><div class="phone " role="img" aria-label="Points screen showing available points and rewards"><div class="screen"><div class="z" style="height: 490px; padding: 22px 16px 0; font-family: 'DM Sans', system-ui, sans-serif">
 <div style="text-align: center; font-size: 18px; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 18px">Points &amp; Rewards</div>
 <div style="display: flex; align-items: stretch; padding: 22px 0; border-radius: 20px; background: #141414; border: 1px solid #2A2A2A">
 <div style="flex: 1; text-align: center"><div style="font-size: 36px; font-weight: 800; letter-spacing: -1px; line-height: 1.1; color: #F5A623">120</div><div style="margin-top: 4px; font-size: 12px; color: rgba(244,244,245,0.62)">available</div></div>
@@ -404,8 +409,8 @@ img{max-width:100%}
 <div class="wrap">
 <div class="head"><h2 class="h2">What's in the app</h2></div>
 <div class="tiles">
-<div><div class="tile-visual" style="display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 3px"><img loading="lazy" decoding="async" src="/img/food-thali.jpg" alt="" style="grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; display: block"><img loading="lazy" decoding="async" src="/img/food-prawn.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0"><img loading="lazy" decoding="async" src="/img/food-sambar.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0"></div><h3 class="h3">Discover</h3><p class="body">A photo feed of places near you, each with its current score.</p></div>
-<div><div class="tile-visual"><img loading="lazy" decoding="async" src="/img/app-map.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; display: block"></div><h3 class="h3">Map</h3><p class="body">Every listed restaurant in Trivandrum on one map.</p></div>
+<div><div class="tile-visual" style="display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 3px"><img draggable="false" loading="lazy" decoding="async" src="/img/food-thali.jpg" alt="" style="grid-row: 1 / 3; width: 100%; height: 100%; object-fit: cover; display: block"><img draggable="false" loading="lazy" decoding="async" src="/img/food-prawn.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0"><img draggable="false" loading="lazy" decoding="async" src="/img/food-sambar.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0"></div><h3 class="h3">Discover</h3><p class="body">A photo feed of places near you, with scores from the last 30 days.</p></div>
+<div><div class="tile-visual"><img draggable="false" loading="lazy" decoding="async" src="/img/app-map.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; display: block"></div><h3 class="h3">Map</h3><p class="body">Every listed restaurant in Trivandrum on one map.</p></div>
 <div><div class="tile-visual" style="padding: 18px; display: flex; flex-direction: column; gap: 10px"><div style="font-size: 14px; color: rgba(244,244,245,0.72)">Today, table for 2</div><div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px"><span class="chip">7:00 pm</span><span class="chip on">7:30 pm</span><span class="chip">8:00 pm</span><span class="chip">8:30 pm</span></div><div style="font-size: 13px; color: rgba(244,244,245,0.62)">Confirmed straight away</div></div><h3 class="h3">Book a table</h3><p class="body">At restaurants that take bookings. It costs you nothing.</p></div>
 <div><div class="tile-visual" style="padding: 18px; display: flex; flex-direction: column; justify-content: center; gap: 2px"><div style="display: flex; justify-content: space-between; padding: 10px 0; font-size: 15px"><span>₹10 off</span><span style="color: rgba(244,244,245,0.72)">100 pts</span></div><div style="display: flex; justify-content: space-between; padding: 10px 0; font-size: 15px; border-top: 1px solid rgba(255,255,255,0.08)"><span>₹30 off</span><span style="color: rgba(244,244,245,0.72)">250 pts</span></div><div style="display: flex; justify-content: space-between; padding: 10px 0; font-size: 15px; border-top: 1px solid rgba(255,255,255,0.08)"><span>₹70 off</span><span style="color: rgba(244,244,245,0.72)">500 pts</span></div></div><h3 class="h3">Rewards</h3><p class="body">Points from your reviews become money off at partner restaurants.</p></div>
 </div>
@@ -423,7 +428,7 @@ img{max-width:100%}
 </div>
 <div class="band-shot"><div class="dash" role="img" aria-label="remark restaurant dashboard, Overview screen, illustrative example">
 <div class="dash-side">
-<div style="padding: 0 10px 18px"><img src="/remarkwhite.png" alt="" style="height: 24px; width: auto; display: block"><div style="margin-top: 10px; font-size: 13px; color: rgba(244,244,245,0.62)">Grace Cafe</div></div>
+<div style="padding: 0 10px 18px"><img draggable="false" src="/remarkwhite.png" alt="" style="height: 24px; width: auto; display: block"><div style="margin-top: 10px; font-size: 13px; color: rgba(244,244,245,0.62)">Grace Cafe</div></div>
 <div style="display: flex; flex-direction: column; gap: 4px"><div class="dash-nav on"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z"></path></svg><span>Overview</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 5.5h11A2.5 2.5 0 0 1 20 8v9.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5V8a2.5 2.5 0 0 1 2.5-2.5ZM4 10h16M8.5 3.5v4M15.5 3.5v4"></path></svg><span>Bookings</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 16.4l-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"></path></svg><span>Reviews</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19v-8M10 19V5M15 19v-6M20 19V9"></path></svg><span>Analytics</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 20V4.5M6 5h11l-2 4 2 4H6"></path></svg><span>Complaints</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8.5h16v3a2 2 0 0 0 0 4v3H4v-3a2 2 0 0 0 0-4zM14 8.5v10"></path></svg><span>Redeem</span></div><div class="dash-nav"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 12h4M12 12h8M4 17h12M18 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM12 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM20 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"></path></svg><span>Settings</span></div></div>
 </div>
 <div class="dash-main">
@@ -464,9 +469,9 @@ img{max-width:100%}
 <div class="wrap">
 <div class="foot-grid">
 <div class="foot-brand">
-<img src="/remarkwhite.png" alt="remark" style="height: 22px; width: auto; display: block">
+<img draggable="false" src="/remarkwhite.png" alt="remark" style="height: 22px; width: auto; display: block">
 <p style="margin: 14px 0 6px; font-size: 15px; color: rgba(244,244,245,0.72)">Restaurant reviews for Trivandrum.</p>
-<a href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>
+<a class="copyable" href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>
 </div>
 <div><h3>App</h3><a href="/#how">How it works</a><a href="/#questions">Questions</a><a href="/#join">Join the waitlist</a></div>
 <div><h3>Restaurants</h3><a href="/restaurants">List your restaurant</a><a href="https://restaurant.remarks.co.in/auth/login">Sign in</a></div>
@@ -476,6 +481,18 @@ img{max-width:100%}
 </div>
 </footer>
 <script>
+// ── Logo: back to the top, as on the first landing page ────────
+document.getElementById('to-top').addEventListener('click', () => {
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: still ? 'auto' : 'smooth' });
+});
+
+// No save or copy menu on photos or the logo: long-press on a phone, right-click
+// on a computer. Other links keep the phone's normal menu.
+document.addEventListener('contextmenu', e => {
+  if (e.target.closest('img, .phone, .dash, .tile-visual, .nav-logo, .nav a[href="/"]')) e.preventDefault();
+});
+
 // ── Hero typewriter ────────────────────────────────────────────
 // Same constants as the TypeWriter in the app (apps/user/components/TypeWriter.tsx)
 // so the two feel like one product. Words carry their own full stop. Under
