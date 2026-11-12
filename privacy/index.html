@@ -197,7 +197,7 @@
 <header>
   <div class="eyebrow">Legal</div>
   <h1>Privacy Policy</h1>
-  <p class="dates">Effective 28 July 2026 · Last updated 7 November 2026</p>
+  <p class="dates">Effective 28 July 2026 · Last updated 12 November 2026</p>
 </header>
 
 <div class="lede">
@@ -263,7 +263,7 @@
   <li><strong>No advertising networks or third-party trackers</strong> of any kind.</li>
   <li><strong>No crash-reporting or session-recording tools of our own.</strong> Google Maps' own diagnostics are described in section 6.</li>
   <li><strong>No device fingerprinting</strong> — we do not collect advertising IDs or hardware information. The only device-specific value we keep is the notification token described above, and only if you turn notifications on.</li>
-  <li><strong>No IP address logging</strong> in the application, and no browsing history.</li>
+  <li><strong>No IP address logging</strong> in the app, and no browsing history. One exception: to stop the waitlist form being flooded, we keep a scrambled form of the sender's internet address for 24 hours, then delete it.</li>
   <li><strong>No background location</strong> and no movement tracking.</li>
   <li><strong>No payment card data.</strong> We do not process card payments at all.</li>
   <li><strong>No contact list, microphone, calendar, or camera-roll scanning.</strong> We only receive the specific photos you choose to upload. The app opens your camera only when you tap Take a photo.</li>
@@ -304,12 +304,13 @@
 <p>When you book a table, that restaurant sees the name, mobile number, party size and notes on the booking, and whether you arrived. They never see your location.</p>
 
 <h2><span class="num">6</span>Who we share data with</h2>
-<p>We share personal data with exactly four service providers, each of which processes it only to run remark:</p>
+<p>We share personal data with exactly five service providers, each of which processes it only to run remark:</p>
 <ul>
   <li><strong>Supabase</strong> — our database, authentication, and file storage provider. All account data, reviews, and uploads are stored on Supabase infrastructure.</li>
   <li><strong>Google Maps Platform</strong> — provides maps and place search. Map usage sends the map view and search queries to Google. The Google Maps software built into the app also sends Google its own technical data — crash and performance reports, how the map is used, and an identifier for your installation — which Google uses to run and improve its service under its own privacy policy. remark does not receive this data. Your stored check-in coordinates are not sent to Google.</li>
   <li><strong>Resend</strong> — delivers our transactional emails. Resend receives your email address and the contents of that email.</li>
   <li><strong>Expo</strong> — relays notifications to your phone if you turn them on. Expo receives your phone's notification token and the text of each notification, and hands it to Google's Firebase Cloud Messaging (Android) or Apple's Push Notification service (iPhone), which deliver it to your device.</li>
+  <li><strong>Vercel</strong> — hosts our website and the restaurant dashboard. Vercel receives the technical data any website host sees, such as your IP address, when you visit them.</li>
 </ul>
 <p>We may also disclose data where legally required, for example in response to a valid order from an Indian court or law-enforcement authority.</p>
 <p><strong>We do not sell personal data, and we do not share it with advertisers or data brokers.</strong> There is no third-party advertising on remark.</p>
@@ -361,7 +362,7 @@
   <li><strong>Encryption in transit</strong> (TLS) for all connections, and encryption at rest for stored data.</li>
   <li><strong>Passwords are hashed</strong>, never stored in readable form — we cannot see your password.</li>
   <li><strong>Sessions are stored in secure device storage</strong> (iOS Keychain / Android Keystore).</li>
-  <li><strong>Verification rules run server-side</strong>, so proximity checks and review limits cannot be forged.</li>
+  <li><strong>Check-in distance and review limits are checked on our servers</strong>, not only in the app.</li>
 </ul>
 <p>No system is perfectly secure. If a data breach occurs that is likely to affect you, we will notify you and the Data Protection Board of India as required by law.</p>
 

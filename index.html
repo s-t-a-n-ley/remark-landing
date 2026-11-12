@@ -659,7 +659,10 @@ async function handleWL() {
     emailInput.disabled = true;
     cityInput.disabled = true;
     msg.style.color    = 'rgba(76,175,125,0.9)';
-    msg.textContent    = `Done, ${name}! Check your promotions/inbox for a confirmation.`;
+    // The welcome email has a daily cap; past it the function says emailed: false.
+    msg.textContent    = data.emailed === false
+      ? `Done, ${name}! You're on the list.`
+      : `Done, ${name}! Check your promotions/inbox for a confirmation.`;
 
   } catch (err) {
     spinner.style.display = 'none';
