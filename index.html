@@ -8,11 +8,13 @@
      PRIMARY SEO
 ════════════════════════════════════════════ -->
 <title>Remark — Restaurant Reviews You Can Actually Trust | Trivandrum</title>
-<meta name="description" content="remark shows you where Trivandrum restaurants actually stand right now. GPS-verified visits, proof of order for delivery, and 30-day rolling scores that expire. Join the waitlist for early access."/>
+<meta name="description" content="remark shows you where Trivandrum restaurants actually stand right now. GPS-verified visits, proof of order for delivery, and 30-day rolling scores that expire. Now on iPhone and Android in Trivandrum."/>
 <meta name="keywords" content="restaurant reviews Trivandrum, food reviews Kerala, Trivandrum restaurants, verified restaurant reviews, remark app"/>
 <meta name="robots" content="index, follow"/>
 <meta name="theme-color" content="#050505"/>
 <link rel="canonical" href="https://remarks.co.in/"/>
+<!-- iPhone Safari shows Apple's own "Open / Get" banner for the app. -->
+<meta name="apple-itunes-app" content="app-id=6822417386"/>
 
 <!-- ═══════════════════════════════════════════
      OPEN GRAPH (WhatsApp, LinkedIn, Facebook)
@@ -21,7 +23,7 @@
 <meta property="og:url" content="https://remarks.co.in/"/>
 <meta property="og:site_name" content="Remark"/>
 <meta property="og:title" content="Remark — Restaurant Reviews You Can Actually Trust"/>
-<meta property="og:description" content="GPS-verified restaurant reviews for Trivandrum. 30-day rolling scores that expire. Real visits and real orders. Launching soon — join the waitlist."/>
+<meta property="og:description" content="GPS-verified restaurant reviews for Trivandrum. 30-day rolling scores that expire. Real visits and real orders. Now on iPhone and Android."/>
 <meta property="og:image" content="https://remarks.co.in/og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -33,7 +35,7 @@
 ════════════════════════════════════════════ -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Remark — Restaurant Reviews You Can Actually Trust"/>
-<meta name="twitter:description" content="GPS-verified restaurant reviews for Trivandrum. 30-day rolling scores. Real visits and real orders. Join the waitlist."/>
+<meta name="twitter:description" content="GPS-verified restaurant reviews for Trivandrum. 30-day rolling scores. Real visits and real orders. Now on iPhone and Android."/>
 <meta name="twitter:image" content="https://remarks.co.in/og-image.png"/>
 <meta name="twitter:image:alt" content="remark — Reviews That Actually Matter"/>
 
@@ -124,6 +126,23 @@ body{margin:0;background:#050505;color:#f4f4f5;font-family:'DM Sans',system-ui,-
 .input:focus{border-color:rgba(245,166,35,.6)}
 .input::placeholder{color:rgba(244,244,245,.62)}
 .note{font-size:14px;color:rgba(244,244,245,.62)}
+.get{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:32px}
+.store-badge{display:inline-block;line-height:0;border-radius:10px}
+.store-badge img{display:block;height:52px;width:auto}
+.wl{max-width:520px;margin-top:22px}
+.wl summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;font-size:15.5px;color:rgba(244,244,245,.72)}
+.wl summary::-webkit-details-marker{display:none}
+.wl summary:hover,.wl[open] summary{color:#f4f4f5}
+.wl .fields{margin-top:16px}
+.appbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;display:none;align-items:center;gap:12px;padding:10px 6px 10px 12px;border-radius:18px;background:rgba(20,20,22,.97);border:1px solid rgba(255,255,255,.14);box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.appbar.on{display:flex}
+.appbar img{width:44px;height:44px;border-radius:11px;flex:0 0 44px}
+.appbar-text{flex:1;min-width:0}
+.appbar-name{font-size:15px;font-weight:700;color:#f4f4f5}
+.appbar-sub{font-size:13px;color:rgba(244,244,245,.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.appbar .cta{height:40px;padding:0 18px;font-size:14.5px;border-radius:12px}
+.appbar-x{width:44px;height:44px;flex:0 0 44px;border:0;background:none;color:rgba(244,244,245,.62);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border-radius:10px}
+body.has-appbar{padding-bottom:84px}
 .owner-line{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;max-width:520px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);font-size:15.5px;color:rgba(244,244,245,.72)}
 .owner-line a{display:inline-flex;align-items:center;gap:5px;color:#f4f4f5;font-weight:700}
 .owner-line a:hover{text-decoration:underline}
@@ -247,23 +266,31 @@ img{max-width:100%;pointer-events:none;-webkit-user-drag:none}
 <div class="wrap nav-in">
 <button type="button" class="nav-logo" id="to-top" aria-label="Back to top"><img draggable="false" src="/remarkwhite.png" alt="remark" style="display: block; height: 22px; width: auto"></button>
 <nav class="nav-links" aria-label="Main"><a href="#how">How it works</a><a href="#questions">Questions</a></nav>
-<div class="nav-end"><a class="nav-quiet" href="/restaurants">For restaurants</a><a class="cta sm hide-phone" href="#join">Join the waitlist</a></div>
+<div class="nav-end"><a class="nav-quiet" href="/restaurants">For restaurants</a><a class="cta sm hide-phone" href="#join">Get the app</a></div>
 </div>
 </header>
 <main>
 <section class="hero" id="join">
 <div class="wrap hero-grid">
 <div>
-<p class="place"><span class="dot"></span>Opening in Trivandrum</p>
+<p class="place"><span class="dot"></span>Now in Trivandrum</p>
 <h1 class="h1" aria-label="Every rating here expires."><span aria-hidden="true">Every rating<br><span class="tw-line">here <span class="saffron" id="tw">expires.</span><span class="saffron caret">|</span></span></span></h1>
 <p class="lead">remark shows how a restaurant is doing right now. Every score comes from the last 30 days, and every review needs a check-in or proof of an order.</p>
+<div class="get" id="get-app">
+<a class="store-badge" data-store="ios" href="https://apps.apple.com/in/app/id6822417386" aria-label="Download remark on the App Store"><img src="/img/badges/app-store.svg" alt="Download on the App Store" width="156" height="52"></a>
+<a class="store-badge" data-store="android" href="https://play.google.com/store/apps/details?id=in.co.remarks.app" aria-label="Get remark on Google Play"><img src="/img/badges/google-play.png" alt="Get it on Google Play" width="175" height="52"></a>
+</div>
+<p class="note" style="margin: 14px 0 0">Free on iPhone and Android.</p>
+<details class="wl">
+<summary>Not in Trivandrum yet? Get an email when remark reaches your city<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></summary>
 <div class="fields">
 <label><span class="sr">Your name</span><input class="input" id="wl-name" type="text" placeholder="Your name" autocomplete="given-name"></label>
 <label><span class="sr">Your email</span><input class="input" id="wl-email" type="email" placeholder="your@email.com" autocomplete="email"></label>
 <label><span class="sr">Your city, optional</span><input class="input" id="wl-city" type="text" placeholder="Your city (optional)" autocomplete="address-level2" maxlength="80"></label>
-<button type="button" class="cta" id="wl-btn" onclick="handleWL()"><span id="wl-btn-text">Join the waitlist</span><span class="wl-spinner" id="wl-spinner"></span></button>
+<button type="button" class="cta" id="wl-btn" onclick="handleWL()"><span id="wl-btn-text">Notify me</span><span class="wl-spinner" id="wl-spinner"></span></button>
 </div>
-<p class="note" id="wl-msg" role="status" style="margin: 12px 0 0">One email when we launch. No spam.</p>
+<p class="note" id="wl-msg" role="status" style="margin: 12px 0 0">One email when remark reaches your city. No spam.</p>
+</details>
 <p class="owner-line"><span>Own a restaurant?</span><a href="/restaurants">List it free<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a></p>
 </div>
 <div class="hero-phone">
@@ -453,15 +480,15 @@ img{max-width:100%;pointer-events:none;-webkit-user-drag:none}
 <section class="sec line" id="questions">
 <div class="wrap split">
 <h2 class="h2">Questions</h2>
-<div class="faq"><details><summary><span>Is remark free?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>Yes. Reviewing, earning points and booking a table cost diners nothing.</p></details><details><summary><span>When can I get the app?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>remark is being tested by a first group of people in Trivandrum. Join the waitlist and we will email you when it launches.</p></details><details><summary><span>How do you know a review is real?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>A dine-in review needs a check-in within 100 metres of the restaurant. A delivery review needs a screenshot of the order and its order ID, and each order can only be used once.</p></details><details><summary><span>Why does a restaurant have no score?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>A score needs reviews from 3 different people in the last 30 days. Until then you can still read its reviews.</p></details><details><summary><span>Where does a complaint go?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>Privately to the owner, who has 48 hours to respond. If the restaurant has no owner on remark yet, it comes to us. You can follow it in the app.</p></details><details><summary><span>Can I use remark outside Trivandrum?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>You can sign up and browse from anywhere. Checking in and reviewing only work in Trivandrum for now.</p></details></div>
+<div class="faq"><details><summary><span>Is remark free?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>Yes. Reviewing, earning points and booking a table cost diners nothing.</p></details><details><summary><span>Where can I get the app?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>On the App Store for iPhone and on Google Play for Android. It is free, and live in Trivandrum.</p></details><details><summary><span>How do you know a review is real?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>A dine-in review needs a check-in within 100 metres of the restaurant. A delivery review needs a screenshot of the order and its order ID, and each order can only be used once.</p></details><details><summary><span>Why does a restaurant have no score?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>A score needs reviews from 3 different people in the last 30 days. Until then you can still read its reviews.</p></details><details><summary><span>Where does a complaint go?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>Privately to the owner, who has 48 hours to respond. If the restaurant has no owner on remark yet, it comes to us. You can follow it in the app.</p></details><details><summary><span>Can I use remark outside Trivandrum?</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(244,244,245,0.72)" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></summary><p>You can sign up and browse from anywhere. Checking in and reviewing only work in Trivandrum for now.</p></details></div>
 </div>
 </section>
 
 <section class="sec line closing">
 <div class="wrap">
 <h2 class="h2">Be first to <span class="saffron">remark.</span></h2>
-<p class="sub">Opening first in Trivandrum.</p>
-<a class="cta" href="#join">Join the waitlist</a>
+<p class="sub">Now in Trivandrum, on iPhone and Android.</p>
+<a class="cta" href="#join">Get the app</a>
 </div>
 </section>
 </main>
@@ -473,13 +500,19 @@ img{max-width:100%;pointer-events:none;-webkit-user-drag:none}
 <p style="margin: 14px 0 6px; font-size: 15px; color: rgba(244,244,245,0.72)">Restaurant reviews for Trivandrum.</p>
 <a class="copyable" href="mailto:hello@remarks.co.in">hello@remarks.co.in</a>
 </div>
-<div><h3>App</h3><a href="/#how">How it works</a><a href="/#questions">Questions</a><a href="/#join">Join the waitlist</a></div>
+<div><h3>App</h3><a href="/#how">How it works</a><a href="/#questions">Questions</a><a href="/#join">Get the app</a></div>
 <div><h3>Restaurants</h3><a href="/restaurants">List your restaurant</a><a href="https://restaurant.remarks.co.in/auth/login">Sign in</a></div>
 <div><h3>Company</h3><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/delete-account">Delete account</a></div>
 </div>
 <div class="foot-base">© 2026 remark</div>
 </div>
 </footer>
+<div class="appbar" id="appbar" role="region" aria-label="Get the remark app">
+<img src="/apple-touch-icon.png" alt="" width="44" height="44">
+<div class="appbar-text"><div class="appbar-name">remark</div><div class="appbar-sub" id="appbar-sub">Free on your phone</div></div>
+<a class="cta" id="appbar-get" href="#join">Get</a>
+<button type="button" class="appbar-x" id="appbar-x" aria-label="Close"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
 <script>
 // ── Logo: back to the top, as on the first landing page ────────
 document.getElementById('to-top').addEventListener('click', () => {
@@ -583,6 +616,37 @@ renderScore(0);
 // ── Supabase config ────────────────────────────────────────────
 const SUPABASE_URL      = 'https://zdncdimmfsbwplpfpkbq.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkbmNkaW1tZnNid3BscGZwa2JxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2Njc2OTcsImV4cCI6MjA5MzI0MzY5N30.JdPuwN6R-rdtF2Q8ejcHLMVLTI6inzah6AsOOf8E9zU';
+
+// ── Get the app ────────────────────────────────────────────────
+// A phone sees only its own store's badge. iPhone Safari gets Apple's Smart App
+// Banner from the meta tag; every other phone browser (Android, and in-app browsers
+// like Instagram's, where Apple's banner never shows) gets the bar at the bottom,
+// until it is closed once.
+(function () {
+  var IOS_URL = 'https://apps.apple.com/in/app/id6822417386';
+  var PLAY_URL = 'https://play.google.com/store/apps/details?id=in.co.remarks.app';
+  var ua = navigator.userAgent || '';
+  var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  if (!ios && !android) return;
+  document.querySelectorAll('.store-badge').forEach(function (a) {
+    if (a.dataset.store !== (ios ? 'ios' : 'android')) a.style.display = 'none';
+  });
+  var safari = ios && /Safari/.test(ua) && !/CriOS|FxiOS|EdgiOS|OPiOS|GSA|Instagram|FBAN|FBAV|Line\//.test(ua);
+  if (safari) return;
+  var KEY = 'remark_appbar_closed';
+  try { if (localStorage.getItem(KEY)) return; } catch (e) {}
+  var bar = document.getElementById('appbar');
+  document.getElementById('appbar-get').href = ios ? IOS_URL : PLAY_URL;
+  document.getElementById('appbar-sub').textContent = ios ? 'Free on the App Store' : 'Free on Google Play';
+  bar.classList.add('on');
+  document.body.classList.add('has-appbar');
+  document.getElementById('appbar-x').addEventListener('click', function () {
+    bar.classList.remove('on');
+    document.body.classList.remove('has-appbar');
+    try { localStorage.setItem(KEY, '1'); } catch (e) {}
+  });
+})();
 
 // ── Waitlist handler ───────────────────────────────────────────
 async function handleWL() {
